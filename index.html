@@ -52,12 +52,31 @@
       font-size: 1.125rem;
       line-height: 1.6;
     }
+
+    .botao {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 12px 28px;
+      background: var(--azul);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 999px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .botao:hover,
+    .botao:focus-visible {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
   <main>
     <h1>Meu primeiro projeto</h1>
     <p>Sou músico e estou aprendendo a usar IA para criar projetos digitais.</p>
+    <a class="botao" href="https://linktr.ee/josimarthdias_oficial" target="_blank" rel="noopener noreferrer">Ouça minhas músicas e me siga</a>
   </main>
 </body>
 </html>
