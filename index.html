@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Josimarth Dias · A Mensagem</title>
-  <meta name="description" content="Josimarth Dias é cantor, compositor e violonista do projeto A Mensagem, com músicas que unem o Gospel e ritmos brasileiros.">
+  <meta name="description" content="Josimarth Dias é cantor, compositor e violonista do projeto A Mensagem, com músicas que unem o Gospel e canções românticas em ritmos como Indie Folk, Baladas, MPB e Acústico.">
 
   <!-- Prévia ao compartilhar o link (WhatsApp, Instagram, Facebook etc.) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Josimarth Dias">
   <meta property="og:title" content="Josimarth Dias · A Mensagem">
-  <meta property="og:description" content="Cantor, compositor e violonista. Músicas de fé, esperança e transformação entre o Gospel e os ritmos brasileiros.">
+  <meta property="og:description" content="Cantor, compositor e violonista. Músicas de fé, esperança e amor entre o Gospel e canções românticas de Indie Folk, Baladas, MPB e Acústico.">
   <meta property="og:url" content="https://josimarthdias.github.io/treino-claude/">
   <meta property="og:image" content="https://josimarthdias.github.io/treino-claude/imagens/compartilhar.jpg">
   <meta property="og:image:width" content="1200">
@@ -217,6 +217,18 @@
       border-color: #1ebe5b;
     }
 
+    .botao-spotify {
+      background: #1db954;
+      border-color: #1db954;
+      color: #0f172a;
+    }
+
+    .botao-spotify:hover,
+    .botao-spotify:focus-visible {
+      background: #1aa34a;
+      border-color: #1aa34a;
+    }
+
     /* Seções */
     section {
       padding: 72px 0;
@@ -275,6 +287,8 @@
     .sobre p {
       margin: 0 0 16px;
       font-size: 1.1rem;
+      text-align: justify;
+      hyphens: auto;
     }
 
     /* Música */
@@ -334,6 +348,39 @@
       margin: 20px 0 0;
       text-align: center;
       color: var(--texto-suave);
+    }
+
+    /* Convite (chamada para ação) */
+    .convite {
+      text-align: center;
+      background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.22), transparent 70%);
+    }
+
+    .convite .rotulo {
+      margin: 0 auto 12px;
+      color: var(--azul);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .convite h2 {
+      max-width: 640px;
+      margin: 0 auto 16px;
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      line-height: 1.2;
+    }
+
+    .convite h2::after {
+      margin: 16px auto 0;
+    }
+
+    .convite p {
+      max-width: 560px;
+      margin: 0 auto;
+      color: var(--texto-suave);
+      font-size: 1.1rem;
     }
 
     /* Agenda e contato */
@@ -426,7 +473,8 @@
       }
 
       .sobre p {
-        text-align: left;
+        font-size: 1rem;
+        text-align: justify;
       }
 
       .foto {
@@ -443,7 +491,7 @@
       <a class="marca" href="#inicio">Josimarth Dias</a>
       <nav>
         <a href="#sobre">Sobre</a>
-        <a href="#musica">Música</a>
+        <a href="#musica">Músicas</a>
         <a href="#agenda">Agenda</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -457,7 +505,7 @@
         <div class="conteudo">
           <p class="rotulo">Cantor · Compositor · Violonista</p>
           <h1>Josimarth Dias</h1>
-          <p class="frase">Projeto "A Mensagem": palavras de fé, esperança e transformação entre o Gospel e os ritmos brasileiros.</p>
+          <p class="frase">Projeto "A Mensagem": canções de fé, esperança e transformação, entre o Gospel e músicas românticas em ritmos como Indie Folk, Baladas, MPB e Acústico.</p>
           <div class="botoes">
             <a class="botao" href="#musica">Ouvir agora</a>
             <a class="botao botao-contorno" href="#contato">Contato</a>
@@ -473,7 +521,7 @@
         </div>
         <div>
           <h2>Sobre</h2>
-          <p>Josimarth Dias é um cantor, compositor e violonista que dedica sua arte ao projeto "A Mensagem". Com uma musicalidade que transita entre o Gospel e ritmos brasileiros, Josimarth utiliza sua voz e as cordas do seu violão para levar palavras de fé, esperança e transformação aos seus ouvintes.</p>
+          <p>Josimarth Dias é um cantor, compositor e violonista que dedica sua arte ao projeto "A Mensagem". Com uma musicalidade que transita entre o Gospel e músicas românticas em ritmos como Indie Folk, Baladas, MPB e Acústico, Josimarth utiliza sua voz e as cordas do seu violão para levar palavras de fé, esperança e transformação aos seus ouvintes.</p>
           <p>Atualmente baseado em Brasília, o artista vem consolidando sua carreira com composições autorais marcantes, como "A Mensagem", "Não Temerei" e "Tentando Te Encontrar", entre outras. Suas letras são reflexos de uma sensibilidade aguçada e um compromisso profundo em edificar vidas através do louvor.</p>
           <p>Mais do que música, cada lançamento é um convite para uma experiência de conexão espiritual e paz. Explore sua discografia e deixe-se envolver pela mensagem.</p>
         </div>
@@ -482,7 +530,7 @@
 
     <section id="musica">
       <div class="container">
-        <h2>Música</h2>
+        <h2>Músicas</h2>
         <ul class="faixas" aria-label="Destaques">
           <li><a href="https://open.spotify.com/track/6NmPX1huwuVD5qf3AAcoLn" target="_blank" rel="noopener noreferrer">A Mensagem <span class="genero">Gospel Acústico</span></a></li>
           <li><a href="https://open.spotify.com/track/5mIns1Xps16DPLHSUuCVoL" target="_blank" rel="noopener noreferrer">Não Temerei <span class="genero">Pop Rock</span></a></li>
@@ -492,6 +540,9 @@
           <iframe src="https://open.spotify.com/embed/artist/7JbbaZAEvO36RrxdyiMwqp?theme=0" title="Músicas de Josimarth Dias no Spotify" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
         <p class="disponivel">Todas as músicas estão disponíveis nas principais plataformas digitais.</p>
+        <div class="botoes">
+          <a class="botao botao-spotify" href="https://open.spotify.com/artist/7JbbaZAEvO36RrxdyiMwqp" target="_blank" rel="noopener noreferrer">Seguir no Spotify</a>
+        </div>
       </div>
     </section>
 
@@ -500,6 +551,17 @@
         <h2>Agenda</h2>
         <div class="cartao">
           <p>Novas datas em breve. Siga nas redes sociais para saber primeiro.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="convite" id="convite">
+      <div class="container">
+        <p class="rotulo">Convites</p>
+        <h2>Leve "A Mensagem" para sua igreja ou evento</h2>
+        <p>Louvor ao vivo com voz e violão para cultos, congressos, casamentos e eventos.</p>
+        <div class="botoes">
+          <a class="botao botao-whatsapp" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20convidar%20voc%C3%AA%20para%20ministrar%20em%20um%20evento." target="_blank" rel="noopener noreferrer">Convidar para ministrar</a>
         </div>
       </div>
     </section>
