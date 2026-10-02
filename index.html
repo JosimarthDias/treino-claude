@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Josimarth Dias · A Mensagem</title>
+  <title>Josimarth Dias · Cantor e Compositor | A Mensagem</title>
   <meta name="description" content="Josimarth Dias é cantor, compositor e violonista do projeto A Mensagem, com músicas que unem o Gospel e canções românticas em ritmos como Indie Folk, Baladas, MPB e Acústico.">
 
   <!-- Prévia ao compartilhar o link (WhatsApp, Instagram, Facebook etc.) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Josimarth Dias">
-  <meta property="og:title" content="Josimarth Dias · A Mensagem">
+  <meta property="og:title" content="Josimarth Dias · Cantor e Compositor | A Mensagem">
   <meta property="og:description" content="Cantor, compositor e violonista. Músicas de fé, esperança e amor entre o Gospel e canções românticas de Indie Folk, Baladas, MPB e Acústico.">
   <meta property="og:url" content="https://josimarthdias.github.io/treino-claude/">
   <meta property="og:image" content="https://josimarthdias.github.io/treino-claude/imagens/compartilhar.jpg">
@@ -18,7 +18,33 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Josimarth Dias com seu violão">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+  <link rel="canonical" href="https://josimarthdias.github.io/treino-claude/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><rect x='6' y='6' width='88' height='88' rx='18' fill='none' stroke='%233b82f6' stroke-width='5'/><text x='50' y='66' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-weight='800' font-size='46' fill='%23e2e8f0'>JD</text></svg>">
+  <link rel="apple-touch-icon" href="imagens/icone.png">
+
+  <!-- Informações para o Google entender que o site é de um artista -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Josimarth Dias",
+    "jobTitle": "Cantor, compositor e violonista",
+    "description": "Cantor, compositor e violonista do projeto A Mensagem, com músicas que unem o Gospel e canções românticas em ritmos como Indie Folk, Baladas, MPB e Acústico.",
+    "url": "https://josimarthdias.github.io/treino-claude/",
+    "image": "https://josimarthdias.github.io/treino-claude/imagens/josimarth-dias-foto.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brasília",
+      "addressRegion": "DF",
+      "addressCountry": "BR"
+    },
+    "sameAs": [
+      "https://open.spotify.com/artist/7JbbaZAEvO36RrxdyiMwqp",
+      "https://www.instagram.com/josimarthdias_oficial/",
+      "https://www.tiktok.com/@josimarthdias"
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -386,6 +412,35 @@
       font-size: 1.1rem;
     }
 
+    /* Para contratantes */
+    .kit {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .kit-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 24px;
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      background: var(--cartao);
+    }
+
+    .kit-item h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .kit-item p {
+      flex: 1;
+      margin: 0;
+      color: var(--texto-suave);
+    }
+
     /* Agenda e contato */
     .cartao {
       padding: 32px;
@@ -553,7 +608,10 @@
       <div class="container">
         <h2>Agenda</h2>
         <div class="cartao">
-          <p>Novas datas em breve. Siga nas redes sociais para saber primeiro.</p>
+          <p><strong>Agenda aberta para 2026 e 2027.</strong> Convide Josimarth para ministrar em sua igreja, congresso ou evento.</p>
+          <div class="botoes">
+            <a class="botao botao-contorno" href="#convite">Fazer um convite</a>
+          </div>
         </div>
       </div>
     </section>
@@ -565,6 +623,28 @@
         <p>Louvor ao vivo com voz e violão para cultos, congressos, casamentos e eventos.</p>
         <div class="botoes">
           <a class="botao botao-whatsapp" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20convidar%20voc%C3%AA%20para%20ministrar%20em%20um%20evento." target="_blank" rel="noopener noreferrer">Convidar para ministrar</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contratantes">
+      <div class="container">
+        <h2>Para contratantes</h2>
+        <div class="kit">
+          <div class="kit-item">
+            <h3>Release</h3>
+            <p>Josimarth Dias é cantor, compositor e violonista de Brasília. À frente do projeto "A Mensagem", une o Gospel a canções românticas em ritmos como Indie Folk, Baladas, MPB e Acústico, levando fé, esperança e transformação por meio da voz e do violão.</p>
+          </div>
+          <div class="kit-item">
+            <h3>Fotos para divulgação</h3>
+            <p>Foto oficial em alta resolução para cartazes, redes sociais e materiais do evento.</p>
+            <a class="botao botao-contorno" href="imagens/josimarth-dias-foto.jpg" download>Baixar foto</a>
+          </div>
+          <div class="kit-item">
+            <h3>Ficha técnica</h3>
+            <p>Formação, repertório e necessidades de som enviados sob solicitação.</p>
+            <a class="botao botao-contorno" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20receber%20a%20sua%20ficha%20t%C3%A9cnica." target="_blank" rel="noopener noreferrer">Pedir ficha técnica</a>
+          </div>
         </div>
       </div>
     </section>
