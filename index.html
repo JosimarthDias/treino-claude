@@ -300,17 +300,40 @@
       list-style: none;
     }
 
-    .faixas li {
+    .faixas a {
+      display: inline-block;
       padding: 6px 16px;
       border: 1px solid var(--borda);
       border-radius: 999px;
       background: var(--cartao);
+      color: var(--texto);
       font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
     }
 
-    .faixas li::before {
+    .faixas a:hover,
+    .faixas a:focus-visible {
+      border-color: var(--azul);
+      transform: translateY(-2px);
+    }
+
+    .faixas a::before {
       content: "♪ ";
       color: var(--azul);
+    }
+
+    .faixas .genero {
+      margin-left: 6px;
+      color: var(--texto-suave);
+      font-weight: 400;
+      font-size: 0.85rem;
+    }
+
+    .disponivel {
+      margin: 20px 0 0;
+      text-align: center;
+      color: var(--texto-suave);
     }
 
     /* Agenda e contato */
@@ -451,7 +474,7 @@
         <div>
           <h2>Sobre</h2>
           <p>Josimarth Dias é um cantor, compositor e violonista que dedica sua arte ao projeto "A Mensagem". Com uma musicalidade que transita entre o Gospel e ritmos brasileiros, Josimarth utiliza sua voz e as cordas do seu violão para levar palavras de fé, esperança e transformação aos seus ouvintes.</p>
-          <p>Atualmente baseado em Brasília, o artista vem consolidando sua carreira com composições autorais marcantes, como "Não Temerei", "Minha Princesa" e "Prosperará", entre outras. Suas letras são reflexos de uma sensibilidade aguçada e um compromisso profundo em edificar vidas através do louvor.</p>
+          <p>Atualmente baseado em Brasília, o artista vem consolidando sua carreira com composições autorais marcantes, como "A Mensagem", "Não Temerei" e "Tentando Te Encontrar", entre outras. Suas letras são reflexos de uma sensibilidade aguçada e um compromisso profundo em edificar vidas através do louvor.</p>
           <p>Mais do que música, cada lançamento é um convite para uma experiência de conexão espiritual e paz. Explore sua discografia e deixe-se envolver pela mensagem.</p>
         </div>
       </div>
@@ -461,13 +484,14 @@
       <div class="container">
         <h2>Música</h2>
         <ul class="faixas" aria-label="Destaques">
-          <li>Não Temerei</li>
-          <li>Minha Princesa</li>
-          <li>Prosperará</li>
+          <li><a href="https://open.spotify.com/track/6NmPX1huwuVD5qf3AAcoLn" target="_blank" rel="noopener noreferrer">A Mensagem <span class="genero">Gospel Acústico</span></a></li>
+          <li><a href="https://open.spotify.com/track/5mIns1Xps16DPLHSUuCVoL" target="_blank" rel="noopener noreferrer">Não Temerei <span class="genero">Pop Rock</span></a></li>
+          <li><a href="https://open.spotify.com/track/4kGsVajnJMtm16xvfVMIV0" target="_blank" rel="noopener noreferrer">Tentando Te Encontrar <span class="genero">MPB</span></a></li>
         </ul>
         <div class="player">
           <iframe src="https://open.spotify.com/embed/artist/7JbbaZAEvO36RrxdyiMwqp?theme=0" title="Músicas de Josimarth Dias no Spotify" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
+        <p class="disponivel">Todas as músicas estão disponíveis nas principais plataformas digitais.</p>
       </div>
     </section>
 
