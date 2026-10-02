@@ -18,6 +18,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Josimarth Dias com seu violão">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0f172a">
   <link rel="canonical" href="https://josimarthdias.github.io/treino-claude/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><rect x='6' y='6' width='88' height='88' rx='18' fill='none' stroke='%233b82f6' stroke-width='5'/><text x='50' y='66' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-weight='800' font-size='46' fill='%23e2e8f0'>JD</text></svg>">
   <link rel="apple-touch-icon" href="imagens/icone.png">
@@ -43,7 +44,8 @@
       "https://www.instagram.com/josimarthdias_oficial/",
       "https://www.tiktok.com/@josimarthdias",
       "https://music.apple.com/br/artist/josimarth-dias/898976981",
-      "https://music.amazon.com.br/artists/B09Q3SB147"
+      "https://music.amazon.com.br/artists/B09Q3SB147",
+      "https://music.youtube.com/channel/UC9mq0rFrnyPaPFfMTBwz4KQ"
     ]
   }
   </script>
@@ -67,6 +69,14 @@
 
     html {
       scroll-behavior: smooth;
+      /* Ao clicar no menu, o título da seção não fica escondido atrás dele */
+      scroll-padding-top: 76px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
     }
 
     body {
@@ -120,6 +130,7 @@
     }
 
     .menu nav a {
+      padding: 12px 0;
       color: var(--texto-suave);
       text-decoration: none;
       font-weight: 600;
@@ -203,8 +214,12 @@
     }
 
     .botao {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       padding: 12px 28px;
+      white-space: nowrap;
       border: 2px solid var(--azul);
       border-radius: 999px;
       background: var(--azul);
@@ -212,6 +227,19 @@
       font-weight: 600;
       text-decoration: none;
       transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+
+    .sprite {
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+
+    .icone {
+      width: 1.15em;
+      height: 1.15em;
+      flex-shrink: 0;
+      fill: currentColor;
     }
 
     .botao:hover,
@@ -323,6 +351,21 @@
     }
 
     /* Música */
+    .video {
+      margin: 0 0 40px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--cartao);
+      aspect-ratio: 16 / 9;
+    }
+
+    .video iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     .player {
       border-radius: 12px;
       overflow: hidden;
@@ -347,7 +390,7 @@
 
     .faixas a {
       display: inline-block;
-      padding: 6px 16px;
+      padding: 10px 18px;
       border: 1px solid var(--borda);
       border-radius: 999px;
       background: var(--cartao);
@@ -375,8 +418,22 @@
       font-size: 0.85rem;
     }
 
+    .subtitulo {
+      margin: 0 0 12px;
+      color: var(--texto-suave);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .seguir {
+      margin: 32px 0 4px;
+      text-align: center;
+    }
+
     .disponivel {
-      margin: 20px 0 0;
+      margin: 0;
       text-align: center;
       color: var(--texto-suave);
     }
@@ -443,6 +500,63 @@
       color: var(--texto-suave);
     }
 
+    /* Ficha técnica */
+    .ficha {
+      margin-top: 40px;
+      padding: 32px;
+      border: 1px solid var(--borda);
+      border-top: 4px solid var(--azul);
+      border-radius: 16px;
+      background: var(--cartao);
+    }
+
+    .ficha h3 {
+      margin: 0 0 24px;
+      font-size: 1.5rem;
+    }
+
+    .ficha-grade {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px 40px;
+    }
+
+    .ficha h4 {
+      margin: 0 0 10px;
+      color: var(--azul);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .ficha p,
+    .ficha ul {
+      margin: 0 0 10px;
+      color: var(--texto-suave);
+    }
+
+    .ficha ul {
+      padding-left: 20px;
+    }
+
+    .ficha li + li {
+      margin-top: 6px;
+    }
+
+    .ficha strong {
+      color: var(--texto);
+    }
+
+    .ficha .botoes {
+      margin-top: 28px;
+    }
+
+    @media (max-width: 640px) {
+      .ficha {
+        padding: 24px 20px;
+      }
+    }
+
     /* Agenda e contato */
     .cartao {
       padding: 32px;
@@ -460,11 +574,78 @@
 
     /* Rodapé */
     footer {
-      padding: 32px 0;
+      padding: 40px 0 96px;
       border-top: 1px solid var(--borda);
       text-align: center;
       color: var(--texto-suave);
       font-size: 0.9rem;
+    }
+
+    footer p {
+      margin: 16px 0 8px;
+    }
+
+    .redes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .redes a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--borda);
+      border-radius: 50%;
+      color: var(--texto-suave);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .redes a:hover,
+    .redes a:focus-visible,
+    .topo:hover,
+    .topo:focus-visible {
+      color: var(--azul);
+      border-color: var(--azul);
+    }
+
+    .topo {
+      display: inline-block;
+      padding: 10px 0;
+      color: var(--texto-suave);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* Botão do WhatsApp sempre visível no canto da tela */
+    .whatsapp-flutuante {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #0f172a;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s;
+    }
+
+    .whatsapp-flutuante:hover,
+    .whatsapp-flutuante:focus-visible {
+      transform: scale(1.08);
+    }
+
+    .whatsapp-flutuante .icone {
+      width: 30px;
+      height: 30px;
     }
 
     /* Celular */
@@ -546,13 +727,24 @@
   </style>
 </head>
 <body>
+  <!-- Ícones das marcas: Simple Icons (CC0) e, para a Amazon, Font Awesome Free (CC BY 4.0, fontawesome.com) -->
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="i-spotify" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></symbol>
+    <symbol id="i-applemusic" viewBox="0 0 24 24"><path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026-.747.043-1.49.123-2.193.4-1.336.53-2.3 1.452-2.865 2.78-.192.448-.292.925-.363 1.408-.056.392-.088.785-.1 1.18 0 .032-.007.062-.01.093v12.223c.01.14.017.283.027.424.05.815.154 1.624.497 2.373.65 1.42 1.738 2.353 3.234 2.801.42.127.856.187 1.293.228.555.053 1.11.06 1.667.06h11.03a12.5 12.5 0 001.57-.1c.822-.106 1.596-.35 2.295-.81a5.046 5.046 0 001.88-2.207c.186-.42.293-.87.37-1.324.113-.675.138-1.358.137-2.04-.002-3.8 0-7.595-.003-11.393zm-6.423 3.99v5.712c0 .417-.058.827-.244 1.206-.29.59-.76.962-1.388 1.14-.35.1-.706.157-1.07.173-.95.045-1.773-.6-1.943-1.536a1.88 1.88 0 011.038-2.022c.323-.16.67-.25 1.018-.324.378-.082.758-.153 1.134-.24.274-.063.457-.23.51-.516a.904.904 0 00.02-.193c0-1.815 0-3.63-.002-5.443a.725.725 0 00-.026-.185c-.04-.15-.15-.243-.304-.234-.16.01-.318.035-.475.066-.76.15-1.52.303-2.28.456l-2.325.47-1.374.278c-.016.003-.032.01-.048.013-.277.077-.377.203-.39.49-.002.042 0 .086 0 .13-.002 2.602 0 5.204-.003 7.805 0 .42-.047.836-.215 1.227-.278.64-.77 1.04-1.434 1.233-.35.1-.71.16-1.075.172-.96.036-1.755-.6-1.92-1.544-.14-.812.23-1.685 1.154-2.075.357-.15.73-.232 1.108-.31.287-.06.575-.116.86-.177.383-.083.583-.323.6-.714v-.15c0-2.96 0-5.922.002-8.882 0-.123.013-.25.042-.37.07-.285.273-.448.546-.518.255-.066.515-.112.774-.165.733-.15 1.466-.296 2.2-.444l2.27-.46c.67-.134 1.34-.27 2.01-.403.22-.043.442-.088.663-.106.31-.025.523.17.554.482.008.073.012.148.012.223.002 1.91.002 3.822 0 5.732z"/></symbol>
+    <symbol id="i-amazon" viewBox="0 0 448 512"><path d="M257.7 162.7c-48.7 1.8-169.5 15.5-169.5 117.5 0 109.5 138.3 114 183.5 43.2 6.5 10.2 35.4 37.5 45.3 46.8l56.8-56s-32.3-25.3-32.3-52.8l0-147.1C341.5 89 317 32 229.2 32 141.2 32 94.5 87 94.5 136.3l73.5 6.8c16.3-49.5 54.2-49.5 54.2-49.5 40.7-.1 35.5 29.8 35.5 69.1zm0 86.8c0 80-84.2 68-84.2 17.2 0-47.2 50.5-56.7 84.2-57.8l0 40.6zM393.7 413c-7.7 10-70 67-174.5 67S34.7 408.5 10.2 379c-6.8-7.7 1-11.3 5.5-8.3 73.3 44.5 187.8 117.8 372.5 30.3 7.5-3.7 13.3 2 5.5 12zm39.8 2.2c-6.5 15.8-16 26.8-21.2 31-5.5 4.5-9.5 2.7-6.5-3.8s19.3-46.5 12.7-55c-6.5-8.3-37-4.3-48-3.2-10.8 1-13 2-14-.3-2.3-5.7 21.7-15.5 37.5-17.5 15.7-1.8 41-.8 46 5.7 3.7 5.1 0 27.1-6.5 43.1z"/></symbol>
+    <symbol id="i-youtubemusic" viewBox="0 0 24 24"><path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm0 19.104c-3.924 0-7.104-3.18-7.104-7.104S8.076 4.896 12 4.896s7.104 3.18 7.104 7.104-3.18 7.104-7.104 7.104zm0-13.332c-3.432 0-6.228 2.796-6.228 6.228S8.568 18.228 12 18.228s6.228-2.796 6.228-6.228S15.432 5.772 12 5.772zM9.684 15.54V8.46L15.816 12l-6.132 3.54z"/></symbol>
+    <symbol id="i-deezer" viewBox="0 0 24 24"><path d="M.693 10.024c.381 0 .693-1.256.693-2.807 0-1.55-.312-2.807-.693-2.807C.312 4.41 0 5.666 0 7.217s.312 2.808.693 2.808ZM21.038 1.56c-.364 0-.684.805-.91 2.096C19.765 1.446 19.184 0 18.526 0c-.78 0-1.464 2.036-1.784 5-.312-2.158-.788-3.536-1.325-3.536-.745 0-1.386 2.704-1.62 6.472-.442-1.932-1.083-3.145-1.793-3.145s-1.35 1.213-1.793 3.145c-.242-3.76-.874-6.463-1.628-6.463-.537 0-1.013 1.378-1.325 3.535C6.938 2.036 6.262 0 5.474 0c-.658 0-1.247 1.447-1.602 3.665-.217-1.291-.546-2.105-.91-2.105-.675 0-1.221 2.807-1.221 6.272 0 3.466.546 6.273 1.221 6.273.277 0 .537-.476.736-1.273.32 2.928.996 4.938 1.776 4.938.606 0 1.143-1.204 1.507-3.11.251 3.622.875 6.195 1.602 6.195.46 0 .875-1.023 1.187-2.677C10.142 21.6 11 24 12.004 24c1.005 0 1.863-2.4 2.235-5.822.312 1.654.727 2.677 1.186 2.677.728 0 1.352-2.573 1.603-6.195.364 1.906.9 3.11 1.507 3.11.78 0 1.455-2.01 1.775-4.938.208.797.46 1.273.737 1.273.675 0 1.22-2.807 1.22-6.273-.008-3.457-.553-6.272-1.23-6.272ZM23.307 10.024c.381 0 .693-1.256.693-2.807 0-1.55-.312-2.807-.693-2.807-.381 0-.693 1.256-.693 2.807s.312 2.808.693 2.808Z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+  </svg>
   <header class="menu">
     <div class="container">
       <a class="marca" href="#inicio">Josimarth Dias</a>
-      <nav>
+      <nav aria-label="Menu principal">
         <a href="#sobre">Sobre</a>
         <a href="#musica">Músicas</a>
-        <a href="#agenda">Agenda</a>
+        <a href="#convite">Convites</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
@@ -560,7 +752,7 @@
 
   <main>
     <section class="destaque" id="inicio">
-      <img class="destaque-foto" src="imagens/destaque.jpg" alt="Josimarth Dias com seu violão">
+      <img class="destaque-foto" src="imagens/destaque.jpg" alt="Josimarth Dias com seu violão" width="1200" height="1490" fetchpriority="high">
       <div class="container">
         <div class="conteudo">
           <p class="rotulo">Cantor · Compositor · Violonista</p>
@@ -568,7 +760,7 @@
           <p class="frase">Projeto "A Mensagem": canções de fé, esperança e transformação, entre o Gospel e músicas românticas em ritmos como Indie Folk, Baladas, MPB e Acústico.</p>
           <div class="botoes">
             <a class="botao" href="#musica">Ouvir agora</a>
-            <a class="botao botao-contorno" href="#contato">Contato</a>
+            <a class="botao botao-contorno" href="#convite">Convidar para ministrar</a>
           </div>
         </div>
       </div>
@@ -577,7 +769,7 @@
     <section id="sobre">
       <div class="container sobre">
         <div class="foto">
-          <img src="imagens/perfil.jpg" alt="Foto de Josimarth Dias com seu violão">
+          <img src="imagens/perfil.jpg" alt="Foto de Josimarth Dias com seu violão" width="800" height="993" loading="lazy">
         </div>
         <div>
           <h2>Sobre</h2>
@@ -591,6 +783,11 @@
     <section id="musica">
       <div class="container">
         <h2>Músicas</h2>
+        <p class="subtitulo">Vídeo · Não Temerei</p>
+        <div class="video">
+          <iframe src="https://www.youtube-nocookie.com/embed/T5wkTmgLkeY" title="Josimarth Dias – Não Temerei (vídeo)" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="subtitulo">Destaques</p>
         <ul class="faixas" aria-label="Destaques">
           <li><a href="https://open.spotify.com/track/6NmPX1huwuVD5qf3AAcoLn" target="_blank" rel="noopener noreferrer">A Mensagem <span class="genero">Gospel Acústico</span></a></li>
           <li><a href="https://open.spotify.com/track/5mIns1Xps16DPLHSUuCVoL" target="_blank" rel="noopener noreferrer">Não Temerei <span class="genero">Pop Rock</span></a></li>
@@ -599,35 +796,25 @@
         <div class="player">
           <iframe src="https://open.spotify.com/embed/artist/7JbbaZAEvO36RrxdyiMwqp?theme=0" title="Músicas de Josimarth Dias no Spotify" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
-        <p class="disponivel">Todas as músicas estão disponíveis nas principais plataformas digitais.</p>
+        <p class="subtitulo seguir">Siga e ouça</p>
+        <p class="disponivel">Siga Josimarth na sua plataforma preferida e receba cada lançamento em primeira mão.</p>
         <div class="botoes">
-          <a class="botao botao-spotify" href="https://open.spotify.com/artist/7JbbaZAEvO36RrxdyiMwqp" target="_blank" rel="noopener noreferrer">Seguir no Spotify</a>
-          <a class="botao botao-contorno" href="https://music.apple.com/br/artist/josimarth-dias/898976981" target="_blank" rel="noopener noreferrer">Apple Music</a>
-          <a class="botao botao-contorno" href="https://music.amazon.com.br/artists/B09Q3SB147" target="_blank" rel="noopener noreferrer">Amazon Music</a>
-          <a class="botao botao-contorno" href="https://link.deezer.com/s/34z7qD0jLgjcdHvs58M2z" target="_blank" rel="noopener noreferrer">Deezer</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="agenda">
-      <div class="container">
-        <h2>Agenda</h2>
-        <div class="cartao">
-          <p><strong>Agenda aberta para 2026 e 2027.</strong> Convide Josimarth para ministrar em sua igreja, congresso ou evento.</p>
-          <div class="botoes">
-            <a class="botao botao-contorno" href="#convite">Fazer um convite</a>
-          </div>
+          <a class="botao botao-spotify" href="https://open.spotify.com/artist/7JbbaZAEvO36RrxdyiMwqp" target="_blank" rel="noopener noreferrer" data-goatcounter-click="spotify"><svg class="icone" aria-hidden="true"><use href="#i-spotify"/></svg>Spotify</a>
+          <a class="botao botao-contorno" href="https://music.apple.com/br/artist/josimarth-dias/898976981" target="_blank" rel="noopener noreferrer" data-goatcounter-click="apple-music"><svg class="icone" aria-hidden="true"><use href="#i-applemusic"/></svg>Apple Music</a>
+          <a class="botao botao-contorno" href="https://music.amazon.com.br/artists/B09Q3SB147" target="_blank" rel="noopener noreferrer" data-goatcounter-click="amazon-music"><svg class="icone" aria-hidden="true"><use href="#i-amazon"/></svg>Amazon Music</a>
+          <a class="botao botao-contorno" href="https://music.youtube.com/channel/UC9mq0rFrnyPaPFfMTBwz4KQ" target="_blank" rel="noopener noreferrer" data-goatcounter-click="youtube-music"><svg class="icone" aria-hidden="true"><use href="#i-youtubemusic"/></svg>YouTube Music</a>
+          <a class="botao botao-contorno" href="https://link.deezer.com/s/34z7qD0jLgjcdHvs58M2z" target="_blank" rel="noopener noreferrer" data-goatcounter-click="deezer"><svg class="icone" aria-hidden="true"><use href="#i-deezer"/></svg>Deezer</a>
         </div>
       </div>
     </section>
 
     <section class="convite" id="convite">
       <div class="container">
-        <p class="rotulo">Convites</p>
+        <p class="rotulo">Agenda aberta para 2026 e 2027</p>
         <h2>Leve "A Mensagem" para sua igreja ou evento</h2>
         <p>Louvor ao vivo com voz e violão para cultos, congressos, casamentos e eventos.</p>
         <div class="botoes">
-          <a class="botao botao-whatsapp" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20convidar%20voc%C3%AA%20para%20ministrar%20em%20um%20evento." target="_blank" rel="noopener noreferrer">Convidar para ministrar</a>
+          <a class="botao botao-whatsapp" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20convidar%20voc%C3%AA%20para%20ministrar%20em%20um%20evento." target="_blank" rel="noopener noreferrer" data-goatcounter-click="whatsapp-convite"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Convidar para ministrar</a>
         </div>
       </div>
     </section>
@@ -647,8 +834,59 @@
           </div>
           <div class="kit-item">
             <h3>Ficha técnica</h3>
-            <p>Formação, repertório e necessidades de som enviados sob solicitação.</p>
-            <a class="botao botao-contorno" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20receber%20a%20sua%20ficha%20t%C3%A9cnica." target="_blank" rel="noopener noreferrer">Pedir ficha técnica</a>
+            <p>Voz e violão, 1h30 de apresentação em duas entradas de 45 minutos. Veja o que o evento precisa.</p>
+            <a class="botao botao-contorno" href="#ficha-tecnica">Ver ficha técnica</a>
+          </div>
+        </div>
+
+        <div class="ficha" id="ficha-tecnica">
+          <h3>Ficha técnica</h3>
+          <div class="ficha-grade">
+            <div class="ficha-bloco">
+              <h4>Apresentação</h4>
+              <ul>
+                <li><strong>Formação:</strong> voz e violão.</li>
+                <li><strong>Duração:</strong> 1h30, em duas entradas de 45 minutos.</li>
+                <li><strong>Repertório:</strong> músicas autorais e louvores temáticos populares.</li>
+              </ul>
+            </div>
+            <div class="ficha-bloco">
+              <h4>Equipamento próprio</h4>
+              <p>Se o local não tiver som, Josimarth leva o próprio equipamento, ideal para eventos de voz e violão em espaços de até 100 pessoas:</p>
+              <ul>
+                <li>Caixa de som JBL PartyBox 310, com bateria própria: funciona sem tomada por até 19 horas;</li>
+                <li>Interface de áudio Behringer de 2 canais;</li>
+                <li>Violão;</li>
+                <li>2 microfones sem fio JBL (autonomia de 19 horas);</li>
+                <li>Retorno sem fio;</li>
+                <li>Pedestais para o violão, a caixa de som e o microfone;</li>
+                <li>Cabos reserva para violão e microfone com fio.</li>
+              </ul>
+              <p>Se o contratante precisar, a caixa de som também pode ser usada como som do evento, mediante combinação prévia.</p>
+            </div>
+            <div class="ficha-bloco">
+              <h4>O contratante providencia</h4>
+              <ul>
+                <li>Banqueta sem encosto, com até 80 cm de altura;</li>
+                <li>Mesa para água;</li>
+                <li><strong>Em igrejas:</strong> uma pessoa para projetar as letras, que serão enviadas com antecedência;</li>
+                <li><strong>Alimentação</strong> (lanche, almoço ou jantar, conforme o horário) para até 3 pessoas, combinada com antecedência.</li>
+              </ul>
+            </div>
+            <div class="ficha-bloco">
+              <h4>Eventos com banda</h4>
+              <ul>
+                <li>As músicas e os músicos necessários são combinados com antecedência;</li>
+                <li>Josimarth chega 1 hora antes do evento para passar as músicas com a banda.</li>
+              </ul>
+            </div>
+            <div class="ficha-bloco">
+              <h4>Deslocamento</h4>
+              <p>Se não for possível oferecer alimentação, combina-se uma ajuda de custo para o deslocamento (Uber ou combustível), como for melhor para o contratante.</p>
+            </div>
+          </div>
+          <div class="botoes">
+            <a class="botao botao-whatsapp" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%2C%20li%20a%20ficha%20t%C3%A9cnica%20e%20gostaria%20de%20combinar%20os%20detalhes%20de%20um%20evento." target="_blank" rel="noopener noreferrer" data-goatcounter-click="whatsapp-ficha-tecnica"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Combinar pelo WhatsApp</a>
           </div>
         </div>
       </div>
@@ -658,12 +896,12 @@
       <div class="container">
         <h2>Contato</h2>
         <div class="cartao">
-          <p>Para shows, eventos e parcerias, fale comigo pelo WhatsApp ou pelas redes sociais.</p>
+          <p>Para shows, eventos e parcerias, fale direto com Josimarth pelo WhatsApp ou pelas redes sociais.</p>
           <div class="botoes">
-            <a class="botao botao-whatsapp" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20show." target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
-            <a class="botao botao-contorno" href="https://www.instagram.com/josimarthdias_oficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a class="botao botao-contorno" href="https://www.tiktok.com/@josimarthdias" target="_blank" rel="noopener noreferrer">TikTok</a>
-            <a class="botao botao-contorno" href="https://open.spotify.com/artist/7JbbaZAEvO36RrxdyiMwqp" target="_blank" rel="noopener noreferrer">Spotify</a>
+            <a class="botao botao-whatsapp" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20show." target="_blank" rel="noopener noreferrer" data-goatcounter-click="whatsapp"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Falar no WhatsApp</a>
+            <a class="botao botao-contorno" href="https://www.instagram.com/josimarthdias_oficial/" target="_blank" rel="noopener noreferrer"><svg class="icone" aria-hidden="true"><use href="#i-instagram"/></svg>Instagram</a>
+            <a class="botao botao-contorno" href="https://www.tiktok.com/@josimarthdias" target="_blank" rel="noopener noreferrer"><svg class="icone" aria-hidden="true"><use href="#i-tiktok"/></svg>TikTok</a>
+            <a class="botao botao-contorno" href="https://open.spotify.com/artist/7JbbaZAEvO36RrxdyiMwqp" target="_blank" rel="noopener noreferrer" data-goatcounter-click="spotify"><svg class="icone" aria-hidden="true"><use href="#i-spotify"/></svg>Spotify</a>
           </div>
         </div>
       </div>
@@ -672,8 +910,21 @@
 
   <footer>
     <div class="container">
-      © 2026 Josimarth Dias. Todos os direitos reservados.
+      <nav class="redes" aria-label="Redes sociais e plataformas">
+        <a href="https://www.instagram.com/josimarthdias_oficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icone" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+        <a href="https://www.tiktok.com/@josimarthdias" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="icone" aria-hidden="true"><use href="#i-tiktok"/></svg></a>
+        <a href="https://open.spotify.com/artist/7JbbaZAEvO36RrxdyiMwqp" target="_blank" rel="noopener noreferrer" aria-label="Spotify" data-goatcounter-click="spotify-rodape"><svg class="icone" aria-hidden="true"><use href="#i-spotify"/></svg></a>
+        <a href="https://music.youtube.com/channel/UC9mq0rFrnyPaPFfMTBwz4KQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube Music" data-goatcounter-click="youtube-music-rodape"><svg class="icone" aria-hidden="true"><use href="#i-youtubemusic"/></svg></a>
+        <a href="https://music.apple.com/br/artist/josimarth-dias/898976981" target="_blank" rel="noopener noreferrer" aria-label="Apple Music" data-goatcounter-click="apple-music-rodape"><svg class="icone" aria-hidden="true"><use href="#i-applemusic"/></svg></a>
+      </nav>
+      <p>© 2026 Josimarth Dias. Todos os direitos reservados.</p>
+      <a class="topo" href="#inicio">Voltar ao topo ↑</a>
     </div>
   </footer>
+
+  <a class="whatsapp-flutuante" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20show." target="_blank" rel="noopener noreferrer" aria-label="Falar com Josimarth no WhatsApp" data-goatcounter-click="whatsapp-flutuante"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+
+  <!-- Contador de visitas (GoatCounter: gratuito e sem cookies) -->
+  <script data-goatcounter="https://josimarthdias.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
