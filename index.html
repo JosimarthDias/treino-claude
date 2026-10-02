@@ -33,6 +33,7 @@
     }
 
     main {
+      width: 100%;
       max-width: 560px;
       padding: 48px 32px;
       background: var(--cartao);
@@ -53,10 +54,18 @@
       line-height: 1.6;
     }
 
+    .botoes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
     .botao {
       display: inline-block;
-      margin-top: 28px;
       padding: 12px 28px;
+      border: 2px solid var(--azul);
       background: var(--azul);
       color: #ffffff;
       font-weight: 700;
@@ -70,13 +79,27 @@
       background: #2563eb;
       transform: translateY(-2px);
     }
+
+    .botao-contorno {
+      background: transparent;
+      color: var(--azul);
+    }
+
+    .botao-contorno:hover,
+    .botao-contorno:focus-visible {
+      background: var(--azul);
+      color: #ffffff;
+    }
   </style>
 </head>
 <body>
   <main>
     <h1>Meu primeiro projeto</h1>
     <p>Sou músico e estou aprendendo a usar IA para criar projetos digitais.</p>
-    <a class="botao" href="https://linktr.ee/josimarthdias_oficial" target="_blank" rel="noopener noreferrer">Ouça minhas músicas e me siga</a>
+    <div class="botoes">
+      <a class="botao" href="https://linktr.ee/josimarthdias_oficial" target="_blank" rel="noopener noreferrer">Ouça minhas músicas e me siga</a>
+      <a class="botao botao-contorno" href="https://www.instagram.com/josimarthdias_oficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
   </main>
 </body>
 </html>
