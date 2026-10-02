@@ -33,6 +33,7 @@
     }
 
     main {
+      width: 100%;
       max-width: 560px;
       padding: 48px 32px;
       background: var(--cartao);
@@ -52,12 +53,54 @@
       font-size: 1.125rem;
       line-height: 1.6;
     }
+
+    .botoes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 2px solid var(--azul);
+      background: var(--azul);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 999px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .botao:hover,
+    .botao:focus-visible {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    .botao-contorno {
+      background: transparent;
+      color: var(--azul);
+    }
+
+    .botao-contorno:hover,
+    .botao-contorno:focus-visible {
+      background: var(--azul);
+      color: #ffffff;
+    }
   </style>
 </head>
 <body>
   <main>
     <h1>Meu primeiro projeto</h1>
     <p>Sou músico e estou aprendendo a usar IA para criar projetos digitais.</p>
+    <div class="botoes">
+      <a class="botao botao-contorno" href="https://www.instagram.com/josimarthdias_oficial/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a class="botao botao-contorno" href="https://www.tiktok.com/@josimarthdias" target="_blank" rel="noopener noreferrer">TikTok</a>
+      <a class="botao botao-contorno" href="https://open.spotify.com/artist/7JbbaZAEvO36RrxdyiMwqp" target="_blank" rel="noopener noreferrer">Spotify</a>
+    </div>
   </main>
 </body>
 </html>
