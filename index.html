@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Josimarth Dias · A Mensagem</title>
   <meta name="description" content="Josimarth Dias é cantor, compositor e violonista do projeto A Mensagem, com músicas que unem o Gospel e ritmos brasileiros.">
+
+  <!-- Prévia ao compartilhar o link (WhatsApp, Instagram, Facebook etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Josimarth Dias">
+  <meta property="og:title" content="Josimarth Dias · A Mensagem">
+  <meta property="og:description" content="Cantor, compositor e violonista. Músicas de fé, esperança e transformação entre o Gospel e os ritmos brasileiros.">
+  <meta property="og:url" content="https://josimarthdias.github.io/treino-claude/">
+  <meta property="og:image" content="https://josimarthdias.github.io/treino-claude/imagens/compartilhar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Josimarth Dias com seu violão">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,9 +106,40 @@
 
     /* Destaque (primeira tela) */
     .destaque {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: min(88vh, 760px);
       padding: 96px 0 80px;
-      text-align: center;
-      background: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.25), transparent 60%);
+      overflow: hidden;
+      background: radial-gradient(ellipse at top left, rgba(59, 130, 246, 0.25), transparent 60%);
+    }
+
+    .destaque-foto {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 62%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      /* A foto vai sumindo para a esquerda e para baixo, misturando com o fundo */
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 55%), linear-gradient(to top, transparent, #000 25%);
+      -webkit-mask-composite: source-in;
+      mask-image: linear-gradient(to right, transparent, #000 55%), linear-gradient(to top, transparent, #000 25%);
+      mask-composite: intersect;
+    }
+
+    .destaque .container {
+      position: relative;
+    }
+
+    .destaque .conteudo {
+      max-width: 600px;
+    }
+
+    .destaque .botoes {
+      justify-content: flex-start;
     }
 
     .destaque .rotulo {
@@ -116,7 +160,7 @@
 
     .destaque .frase {
       max-width: 560px;
-      margin: 0 auto;
+      margin: 0;
       color: var(--texto-suave);
       font-size: 1.15rem;
     }
@@ -225,6 +269,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 15%;
     }
 
     .sobre p {
@@ -311,7 +356,35 @@
       }
 
       .destaque {
-        padding: 64px 0 56px;
+        display: block;
+        min-height: 0;
+        padding: 0 0 56px;
+        text-align: center;
+      }
+
+      .destaque-foto {
+        position: static;
+        display: block;
+        width: 100%;
+        height: 62vh;
+        -webkit-mask-image: linear-gradient(to top, transparent, #000 50%);
+        mask-image: linear-gradient(to top, transparent, #000 50%);
+      }
+
+      .destaque .container {
+        margin-top: -40px;
+      }
+
+      .destaque .conteudo {
+        margin: 0 auto;
+      }
+
+      .destaque .frase {
+        margin: 0 auto;
+      }
+
+      .destaque .botoes {
+        justify-content: center;
       }
 
       section {
@@ -356,21 +429,25 @@
 
   <main>
     <section class="destaque" id="inicio">
+      <img class="destaque-foto" src="imagens/destaque.jpg" alt="Josimarth Dias com seu violão">
       <div class="container">
-        <p class="rotulo">Cantor · Compositor · Violonista</p>
-        <h1>Josimarth Dias</h1>
-        <p class="frase">Projeto "A Mensagem": palavras de fé, esperança e transformação entre o Gospel e os ritmos brasileiros.</p>
-        <div class="botoes">
-          <a class="botao" href="#musica">Ouvir agora</a>
-          <a class="botao botao-contorno" href="#contato">Contato</a>
+        <div class="conteudo">
+          <p class="rotulo">Cantor · Compositor · Violonista</p>
+          <h1>Josimarth Dias</h1>
+          <p class="frase">Projeto "A Mensagem": palavras de fé, esperança e transformação entre o Gospel e os ritmos brasileiros.</p>
+          <div class="botoes">
+            <a class="botao" href="#musica">Ouvir agora</a>
+            <a class="botao botao-contorno" href="#contato">Contato</a>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="sobre">
       <div class="container sobre">
-        <!-- Para colocar sua foto: salve a imagem em imagens/perfil.jpg e troque "JD" por <img src="imagens/perfil.jpg" alt="Foto de Josimarth Dias"> -->
-        <div class="foto" aria-hidden="true">JD</div>
+        <div class="foto">
+          <img src="imagens/perfil.jpg" alt="Foto de Josimarth Dias com seu violão">
+        </div>
         <div>
           <h2>Sobre</h2>
           <p>Josimarth Dias é um cantor, compositor e violonista que dedica sua arte ao projeto "A Mensagem". Com uma musicalidade que transita entre o Gospel e ritmos brasileiros, Josimarth utiliza sua voz e as cordas do seu violão para levar palavras de fé, esperança e transformação aos seus ouvintes.</p>
