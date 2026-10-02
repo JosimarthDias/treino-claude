@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Josimarth Dias · Músico</title>
-  <meta name="description" content="Josimarth Dias, músico. Ouça minhas músicas e acompanhe meu trabalho no Instagram, TikTok e Spotify.">
+  <title>Josimarth Dias · A Mensagem</title>
+  <meta name="description" content="Josimarth Dias é cantor, compositor e violonista do projeto A Mensagem, com músicas que unem o Gospel e ritmos brasileiros.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -234,6 +234,28 @@
       border: 0;
     }
 
+    .faixas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 24px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .faixas li {
+      padding: 6px 16px;
+      border: 1px solid var(--borda);
+      border-radius: 999px;
+      background: var(--cartao);
+      font-weight: 600;
+    }
+
+    .faixas li::before {
+      content: "♪ ";
+      color: var(--azul);
+    }
+
     /* Agenda e contato */
     .cartao {
       padding: 32px;
@@ -295,6 +317,10 @@
         margin-right: auto;
       }
 
+      .sobre p {
+        text-align: left;
+      }
+
       .foto {
         width: 180px;
         height: 180px;
@@ -319,9 +345,9 @@
   <main>
     <section class="destaque" id="inicio">
       <div class="container">
-        <p class="rotulo">Músico</p>
+        <p class="rotulo">Cantor · Compositor · Violonista</p>
         <h1>Josimarth Dias</h1>
-        <p class="frase">Ouça minhas músicas e acompanhe o meu trabalho.</p>
+        <p class="frase">Projeto "A Mensagem": palavras de fé, esperança e transformação entre o Gospel e os ritmos brasileiros.</p>
         <div class="botoes">
           <a class="botao" href="#musica">Ouvir agora</a>
           <a class="botao botao-contorno" href="#contato">Contato</a>
@@ -335,8 +361,9 @@
         <div class="foto" aria-hidden="true">JD</div>
         <div>
           <h2>Sobre</h2>
-          <p>Sou músico e estou aprendendo a usar IA para criar projetos digitais.</p>
-          <p>Aqui você encontra minhas músicas, minhas redes sociais e as novidades do meu trabalho.</p>
+          <p>Josimarth Dias é um cantor, compositor e violonista que dedica sua arte ao projeto "A Mensagem". Com uma musicalidade que transita entre o Gospel e ritmos brasileiros, Josimarth utiliza sua voz e as cordas do seu violão para levar palavras de fé, esperança e transformação aos seus ouvintes.</p>
+          <p>Atualmente baseado em Brasília, o artista vem consolidando sua carreira com composições autorais marcantes, como "Não Temerei", "Minha Princesa" e "Prosperará", entre outras. Suas letras são reflexos de uma sensibilidade aguçada e um compromisso profundo em edificar vidas através do louvor.</p>
+          <p>Mais do que música, cada lançamento é um convite para uma experiência de conexão espiritual e paz. Explore sua discografia e deixe-se envolver pela mensagem.</p>
         </div>
       </div>
     </section>
@@ -344,6 +371,11 @@
     <section id="musica">
       <div class="container">
         <h2>Música</h2>
+        <ul class="faixas" aria-label="Destaques">
+          <li>Não Temerei</li>
+          <li>Minha Princesa</li>
+          <li>Prosperará</li>
+        </ul>
         <div class="player">
           <iframe src="https://open.spotify.com/embed/artist/7JbbaZAEvO36RrxdyiMwqp?theme=0" title="Músicas de Josimarth Dias no Spotify" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
