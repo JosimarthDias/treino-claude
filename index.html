@@ -372,31 +372,81 @@
     }
 
     .ao-vivo {
-      max-width: 400px;
-      margin: 0 auto;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #ffffff;
-    }
-
-    .ao-vivo iframe {
+      position: relative;
       display: block;
+      max-width: 360px;
+      margin: 0 auto 40px;
+      aspect-ratio: 4 / 5;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--borda);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .ao-vivo img {
+      position: absolute;
+      inset: 0;
       width: 100%;
-      height: 820px;
-      border: 0;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: brightness(0.7);
+      transition: transform 0.3s, filter 0.3s;
     }
 
-    .ao-vivo-link {
-      margin: 12px 0 40px;
-      text-align: center;
+    .ao-vivo:hover img,
+    .ao-vivo:focus-visible img {
+      transform: scale(1.04);
+      filter: brightness(0.85);
     }
 
-    .ao-vivo-link a {
-      display: inline-flex;
+    .ao-vivo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(7, 11, 22, 0.85), transparent 40%);
+    }
+
+    .ao-vivo-play,
+    .ao-vivo-texto {
+      z-index: 1;
+    }
+
+    .ao-vivo-play {
+      position: absolute;
+      top: 64%;
+      left: 50%;
+      width: 76px;
+      height: 76px;
+      margin: -38px 0 0 -38px;
+      border-radius: 50%;
+      background: var(--azul);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .ao-vivo-play::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 54%;
+      transform: translate(-50%, -50%);
+      border-style: solid;
+      border-width: 14px 0 14px 24px;
+      border-color: transparent transparent transparent #ffffff;
+    }
+
+    .ao-vivo-texto {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 20px;
+      display: flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      padding: 8px 0;
       font-weight: 600;
+      text-align: center;
     }
 
     .player {
@@ -930,11 +980,12 @@
         <div class="video">
           <iframe src="https://www.youtube-nocookie.com/embed/T5wkTmgLkeY" title="Josimarth Dias – Não Temerei (vídeo)" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </div>
-        <p class="subtitulo centro">Ao vivo</p>
-        <div class="ao-vivo">
-          <iframe src="https://www.instagram.com/reel/DBp2M8-uGoo/embed/" title="Josimarth Dias – apresentação ao vivo (Instagram)" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy" scrolling="no"></iframe>
-        </div>
-        <p class="ao-vivo-link"><a href="https://www.instagram.com/reel/DBp2M8-uGoo/" target="_blank" rel="noopener noreferrer" data-goatcounter-click="instagram-ao-vivo"><svg class="icone" aria-hidden="true"><use href="#i-instagram"/></svg>Assistir no Instagram</a></p>
+        <p class="subtitulo centro">Ao vivo · É Bom Poder Te Amar</p>
+        <a class="ao-vivo" href="https://www.instagram.com/reel/DBp2M8-uGoo/" target="_blank" rel="noopener noreferrer" data-goatcounter-click="instagram-ao-vivo">
+          <img src="imagens/ao-vivo-e-bom-poder-te-amar.jpg" alt="" width="1057" height="1321" loading="lazy">
+          <span class="ao-vivo-play" aria-hidden="true"></span>
+          <span class="ao-vivo-texto"><svg class="icone" aria-hidden="true"><use href="#i-instagram"/></svg>"É Bom Poder Te Amar" ao vivo: assistir no Instagram</span>
+        </a>
         <p class="subtitulo">Destaques</p>
         <ul class="faixas" aria-label="Destaques">
           <li><a href="https://open.spotify.com/track/6NmPX1huwuVD5qf3AAcoLn" target="_blank" rel="noopener noreferrer">A Mensagem <span class="genero">Gospel Acústico</span></a></li>
