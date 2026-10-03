@@ -6,7 +6,7 @@ Regras para o Claude seguir ao trabalhar neste repositório.
 
 - É o site de artista do Josimarth, feito em um único arquivo: `index.html`.
 - O CSS (o estilo da página) fica dentro do próprio `index.html`, num bloco `<style>`. Não crie arquivos separados de CSS.
-- A única exceção são as fotos: elas ficam na pasta `imagens/`, porque colocá-las dentro do HTML deixaria a página pesada.
+- As exceções são as fotos, que ficam na pasta `imagens/`, e os arquivos para baixar (como o PDF da ficha técnica), que ficam na pasta `arquivos/`. Colocá-los dentro do HTML deixaria a página pesada.
 
 ## Regras
 
