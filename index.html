@@ -607,24 +607,8 @@
       height: 30px;
     }
 
-    /* Celular */
-    @media (max-width: 640px) {
-      .marca {
-        display: none;
-      }
-
-      .menu .container {
-        justify-content: center;
-      }
-
-      .menu nav {
-        gap: 20px;
-      }
-
-      .menu nav a {
-        font-size: 0.85rem;
-      }
-
+    /* Tablet e celular: a foto do topo fica em cima e o texto embaixo, sem sobrepor o rosto */
+    @media (max-width: 900px) {
       .destaque {
         display: block;
         min-height: 0;
@@ -656,6 +640,30 @@
       .destaque .botoes {
         justify-content: center;
       }
+    }
+
+    /* Celular */
+    @media (max-width: 640px) {
+      .marca {
+        display: none;
+      }
+
+      .menu .container {
+        justify-content: center;
+      }
+
+      .menu nav {
+        gap: 18px;
+      }
+
+      .menu nav a {
+        font-size: 0.85rem;
+      }
+
+      /* No celular, o menu fica só com 4 itens para caber na tela */
+      .menu nav .so-telas-grandes {
+        display: none;
+      }
 
       section {
         padding: 56px 0;
@@ -683,6 +691,17 @@
         font-size: 3rem;
       }
     }
+
+    /* Celulares bem pequenos */
+    @media (max-width: 360px) {
+      .menu nav {
+        gap: 12px;
+      }
+
+      .menu nav a {
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -704,7 +723,8 @@
       <nav aria-label="Menu principal">
         <a href="#sobre">Sobre</a>
         <a href="#musica">Músicas</a>
-        <a href="#convite">Convites</a>
+        <a class="so-telas-grandes" href="#convite">Convites</a>
+        <a href="#contratantes">Contratantes</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
@@ -834,6 +854,8 @@
         <a href="https://open.spotify.com/artist/7JbbaZAEvO36RrxdyiMwqp" target="_blank" rel="noopener noreferrer" aria-label="Spotify" data-goatcounter-click="spotify-rodape"><svg class="icone" aria-hidden="true"><use href="#i-spotify"/></svg></a>
         <a href="https://music.youtube.com/channel/UC9mq0rFrnyPaPFfMTBwz4KQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube Music" data-goatcounter-click="youtube-music-rodape"><svg class="icone" aria-hidden="true"><use href="#i-youtubemusic"/></svg></a>
         <a href="https://music.apple.com/br/artist/josimarth-dias/898976981" target="_blank" rel="noopener noreferrer" aria-label="Apple Music" data-goatcounter-click="apple-music-rodape"><svg class="icone" aria-hidden="true"><use href="#i-applemusic"/></svg></a>
+        <a href="https://music.amazon.com.br/artists/B09Q3SB147" target="_blank" rel="noopener noreferrer" aria-label="Amazon Music" data-goatcounter-click="amazon-music-rodape"><svg class="icone" aria-hidden="true"><use href="#i-amazon"/></svg></a>
+        <a href="https://link.deezer.com/s/34z7qD0jLgjcdHvs58M2z" target="_blank" rel="noopener noreferrer" aria-label="Deezer" data-goatcounter-click="deezer-rodape"><svg class="icone" aria-hidden="true"><use href="#i-deezer"/></svg></a>
       </nav>
       <p>© 2026 Josimarth Dias. Todos os direitos reservados.</p>
       <a class="topo" href="#inicio">Voltar ao topo ↑</a>
