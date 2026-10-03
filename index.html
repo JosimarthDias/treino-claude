@@ -472,6 +472,94 @@
       font-size: 1.1rem;
     }
 
+    /* Pedido de orçamento */
+    .orcamento {
+      max-width: 720px;
+      margin: 32px auto 0;
+      padding: 32px;
+      border-radius: 16px;
+      border-top: 4px solid var(--azul);
+      background: var(--cartao);
+      text-align: left;
+    }
+
+    .orcamento h3 {
+      margin: 0 0 8px;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+
+    .convite .orcamento-ajuda {
+      margin: 0 auto 24px;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .campos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .campo {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .campo-largo {
+      grid-column: 1 / -1;
+    }
+
+    .campo input,
+    .campo select,
+    .campo textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--borda);
+      border-radius: 10px;
+      background: var(--fundo);
+      color: var(--texto);
+      font: inherit;
+      font-weight: 400;
+      color-scheme: dark;
+    }
+
+    .campo input:focus,
+    .campo select:focus,
+    .campo textarea:focus {
+      outline: 2px solid var(--azul);
+      outline-offset: 1px;
+      border-color: var(--azul);
+    }
+
+    .campo [aria-invalid="true"] {
+      border-color: #f87171;
+    }
+
+    .orcamento button {
+      display: flex;
+      width: 100%;
+      margin-top: 24px;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .convite .orcamento-erro {
+      margin: 16px 0 0;
+      color: #fca5a5;
+      font-size: 0.95rem;
+    }
+
+    .convite .orcamento-direto {
+      margin: 16px 0 0;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
     /* Para contratantes */
     .kit {
       display: grid;
@@ -685,6 +773,14 @@
         text-align: justify;
       }
 
+      .orcamento {
+        padding: 24px 16px;
+      }
+
+      .campos {
+        grid-template-columns: 1fr;
+      }
+
       .foto {
         width: 180px;
         height: 180px;
@@ -793,9 +889,61 @@
         <p class="rotulo">Agenda aberta para 2026 e 2027</p>
         <h2>Leve "A Mensagem" para sua igreja ou evento</h2>
         <p>Louvor ao vivo com voz e violão para cultos, congressos, casamentos e eventos.</p>
-        <div class="botoes">
-          <a class="botao botao-whatsapp" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20convidar%20voc%C3%AA%20para%20ministrar%20em%20um%20evento." target="_blank" rel="noopener noreferrer" data-goatcounter-click="whatsapp-convite"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Convidar para ministrar</a>
-        </div>
+        <form class="orcamento" id="orcamento" novalidate>
+          <h3>Peça seu orçamento</h3>
+          <p class="orcamento-ajuda">Preencha e toque em enviar: o WhatsApp abre com tudo já escrito. É só conferir e mandar.</p>
+          <div class="campos">
+            <label class="campo">
+              <span>Seu nome</span>
+              <input type="text" name="nome" autocomplete="name" required>
+            </label>
+            <label class="campo">
+              <span>Tipo de evento</span>
+              <select name="tipo" required>
+                <option value="">Escolha…</option>
+                <option>Culto</option>
+                <option>Congresso ou conferência</option>
+                <option>Casamento</option>
+                <option>Aniversário ou festa</option>
+                <option>Evento de empresa</option>
+                <option>Outro</option>
+              </select>
+            </label>
+            <label class="campo">
+              <span>Data do evento</span>
+              <input type="date" name="data" required>
+            </label>
+            <label class="campo">
+              <span>Cidade ou local</span>
+              <input type="text" name="local" placeholder="Ex.: Taguatinga, Igreja X" required>
+            </label>
+            <label class="campo">
+              <span>Número de pessoas</span>
+              <select name="pessoas">
+                <option value="">Não sei ainda</option>
+                <option>Até 50</option>
+                <option>De 50 a 100</option>
+                <option>De 100 a 300</option>
+                <option>Mais de 300</option>
+              </select>
+            </label>
+            <label class="campo">
+              <span>O local tem som?</span>
+              <select name="som">
+                <option value="">Não sei</option>
+                <option>Sim, o local tem som</option>
+                <option>Não, preciso que você leve</option>
+              </select>
+            </label>
+            <label class="campo campo-largo">
+              <span>Mensagem (opcional)</span>
+              <textarea name="mensagem" rows="3" placeholder="Horário, músicas que gostaria, outros detalhes…"></textarea>
+            </label>
+          </div>
+          <p class="orcamento-erro" role="alert" hidden>Preencha os campos nome, tipo de evento, data e cidade para continuar.</p>
+          <button class="botao botao-whatsapp" type="submit"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Enviar pelo WhatsApp</button>
+          <p class="orcamento-direto">Prefere conversar direto? <a href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20convidar%20voc%C3%AA%20para%20ministrar%20em%20um%20evento." target="_blank" rel="noopener noreferrer" data-goatcounter-click="whatsapp-convite">Falar no WhatsApp</a></p>
+        </form>
       </div>
     </section>
 
@@ -863,6 +1011,56 @@
   </footer>
 
   <a class="whatsapp-flutuante" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20show." target="_blank" rel="noopener noreferrer" aria-label="Falar com Josimarth no WhatsApp" data-goatcounter-click="whatsapp-flutuante"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+
+  <!-- Pedido de orçamento: junta as respostas numa mensagem e abre o WhatsApp. Nada é guardado no site. -->
+  <script>
+    (function () {
+      var form = document.getElementById("orcamento");
+      if (!form) return;
+      var erro = form.querySelector(".orcamento-erro");
+      var data = form.elements.data;
+      var hoje = new Date();
+      data.min = hoje.getFullYear() + "-" + String(hoje.getMonth() + 1).padStart(2, "0") + "-" + String(hoje.getDate()).padStart(2, "0");
+
+      form.addEventListener("submit", function (evento) {
+        evento.preventDefault();
+        var obrigatorios = ["nome", "tipo", "data", "local"];
+        var faltando = null;
+        obrigatorios.forEach(function (nome) {
+          var campo = form.elements[nome];
+          var vazio = !campo.value.trim();
+          campo.setAttribute("aria-invalid", vazio ? "true" : "false");
+          if (vazio && !faltando) faltando = campo;
+        });
+        if (faltando) {
+          erro.hidden = false;
+          faltando.focus();
+          return;
+        }
+        erro.hidden = true;
+
+        var partes = data.value.split("-");
+        var dataBr = partes[2] + "/" + partes[1] + "/" + partes[0];
+        var v = function (nome) { return form.elements[nome].value.trim(); };
+        var linhas = [
+          "Olá, Josimarth! Vim pelo seu site e gostaria de um orçamento.",
+          "",
+          "• Nome: " + v("nome"),
+          "• Tipo de evento: " + v("tipo"),
+          "• Data: " + dataBr,
+          "• Cidade/local: " + v("local"),
+          "• Número de pessoas: " + (v("pessoas") || "Não sei ainda"),
+          "• Som no local: " + (v("som") || "Não sei")
+        ];
+        if (v("mensagem")) linhas.push("• Mensagem: " + v("mensagem"));
+
+        if (window.goatcounter && window.goatcounter.count) {
+          window.goatcounter.count({ path: "orcamento-enviado", title: "Pedido de orçamento", event: true });
+        }
+        window.location.href = "https://wa.me/5561999181424?text=" + encodeURIComponent(linhas.join("\n"));
+      });
+    })();
+  </script>
 
   <!-- Contador de visitas (GoatCounter: gratuito e sem cookies) -->
   <script data-goatcounter="https://josimarthdias.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
