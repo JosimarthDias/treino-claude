@@ -7,7 +7,7 @@ Regras para o Claude seguir ao trabalhar neste repositório.
 - É o site de artista do Josimarth, feito em um único arquivo: `index.html`.
 - O CSS (o estilo da página) fica dentro do próprio `index.html`, num bloco `<style>`. Não crie arquivos separados de CSS.
 - As exceções são as fotos, que ficam na pasta `imagens/`, e os arquivos para baixar (como o PDF da ficha técnica e o QR Code), que ficam na pasta `arquivos/`. Colocá-los dentro do HTML deixaria a página pesada.
-- Também ficam na raiz do projeto: `404.html` (a página de "não encontrada", com o CSS dentro dela, como no `index.html`), `robots.txt` e `sitemap.xml` (arquivos que ajudam o Google a encontrar o site) e `CNAME` (o domínio).
+- Também ficam na raiz do projeto: `404.html` (a página de "não encontrada", com o CSS dentro dela, como no `index.html`), `robots.txt` e `sitemap.xml` (arquivos que ajudam o Google a encontrar o site), `CNAME` (o domínio) e `google7c04dbd5e593df0b.html` (o arquivo que prova ao Google Search Console que o site é do Josimarth; não apague nem mude).
 
 ## Regras
 
