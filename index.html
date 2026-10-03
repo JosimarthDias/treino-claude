@@ -52,7 +52,9 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"></noscript>
   <style>
     :root {
       --fundo: #0f172a;
@@ -62,6 +64,8 @@
       --texto-suave: #94a3b8;
       --azul: #3b82f6;
       --azul-escuro: #2563eb;
+      --azul-claro: #60a5fa;
+      --azul-mais-escuro: #1d4ed8;
     }
 
     * {
@@ -89,7 +93,7 @@
     }
 
     a {
-      color: var(--azul);
+      color: var(--azul-claro);
     }
 
     .container {
@@ -184,7 +188,7 @@
 
     .destaque .rotulo {
       margin: 0 0 12px;
-      color: var(--azul);
+      color: var(--azul-claro);
       font-weight: 600;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -221,9 +225,9 @@
       gap: 8px;
       padding: 12px 28px;
       white-space: nowrap;
-      border: 2px solid var(--azul);
+      border: 2px solid var(--azul-escuro);
       border-radius: 999px;
-      background: var(--azul);
+      background: var(--azul-escuro);
       color: #ffffff;
       font-weight: 600;
       text-decoration: none;
@@ -245,20 +249,21 @@
 
     .botao:hover,
     .botao:focus-visible {
-      background: var(--azul-escuro);
-      border-color: var(--azul-escuro);
+      background: var(--azul-mais-escuro);
+      border-color: var(--azul-mais-escuro);
       transform: translateY(-2px);
     }
 
     .botao-contorno {
+      border-color: var(--azul);
       background: transparent;
-      color: var(--azul);
+      color: var(--azul-claro);
     }
 
     .botao-contorno:hover,
     .botao-contorno:focus-visible {
-      background: var(--azul);
-      border-color: var(--azul);
+      background: var(--azul-escuro);
+      border-color: var(--azul-escuro);
       color: #ffffff;
     }
 
@@ -462,6 +467,71 @@
       border: 0;
     }
 
+    /* Capas que trocam pelo player só quando a pessoa toca (deixa o site mais rápido) */
+    .capa-player {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: 0;
+      background: var(--cartao);
+      color: var(--texto);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .capa-video img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.8);
+      transition: filter 0.3s;
+    }
+
+    .capa-video:hover img,
+    .capa-video:focus-visible img {
+      filter: brightness(1);
+    }
+
+    .capa-video .ao-vivo-play {
+      top: 50%;
+    }
+
+    .capa-spotify {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      height: 352px;
+      background: radial-gradient(ellipse at center, rgba(29, 185, 84, 0.25), transparent 70%), var(--cartao);
+    }
+
+    .capa-spotify .icone {
+      width: 64px;
+      height: 64px;
+      color: #1db954;
+      transition: transform 0.2s;
+    }
+
+    .capa-spotify:hover .icone,
+    .capa-spotify:focus-visible .icone {
+      transform: scale(1.08);
+    }
+
+    .capa-spotify-titulo {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .capa-spotify-sub {
+      color: var(--texto-suave);
+      font-size: 0.95rem;
+    }
+
     .faixas {
       display: flex;
       flex-wrap: wrap;
@@ -491,7 +561,7 @@
 
     .faixas a::before {
       content: "♪ ";
-      color: var(--azul);
+      color: var(--azul-claro);
     }
 
     .faixas .genero {
@@ -529,7 +599,7 @@
 
     .convite .rotulo {
       margin: 0 auto 12px;
-      color: var(--azul);
+      color: var(--azul-claro);
       font-weight: 600;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -577,7 +647,7 @@
 
     .tipos-evento li::before {
       content: "♪ ";
-      color: var(--azul);
+      color: var(--azul-claro);
     }
 
     /* Pedido de orçamento */
@@ -945,7 +1015,7 @@
 
   <main>
     <section class="destaque" id="inicio">
-      <img class="destaque-foto" src="imagens/destaque.jpg" alt="Josimarth Dias com seu violão" width="1200" height="1490" fetchpriority="high">
+      <img class="destaque-foto" src="imagens/destaque.jpg" srcset="imagens/destaque-800.jpg 800w, imagens/destaque.jpg 1200w" sizes="(max-width: 900px) 100vw, 62vw" alt="Josimarth Dias com seu violão" width="1200" height="1490" fetchpriority="high">
       <div class="container">
         <div class="conteudo">
           <p class="rotulo">Cantor · Compositor · Violonista</p>
@@ -962,7 +1032,7 @@
     <section id="sobre">
       <div class="container sobre">
         <div class="foto">
-          <img src="imagens/perfil.jpg" alt="Foto de Josimarth Dias com seu violão" width="800" height="993" loading="lazy">
+          <img src="imagens/perfil-480.jpg" srcset="imagens/perfil-480.jpg 480w, imagens/perfil.jpg 800w" sizes="240px" alt="Foto de Josimarth Dias com seu violão" width="800" height="993" loading="lazy">
         </div>
         <div>
           <h2>Sobre</h2>
@@ -978,11 +1048,14 @@
         <h2>Músicas</h2>
         <p class="subtitulo">Vídeo · Não Temerei</p>
         <div class="video">
-          <iframe src="https://www.youtube-nocookie.com/embed/T5wkTmgLkeY" title="Josimarth Dias – Não Temerei (vídeo)" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+          <button class="capa-player capa-video" type="button" data-carregar="youtube" aria-label="Assistir ao vídeo de Não Temerei">
+            <img src="https://i.ytimg.com/vi/T5wkTmgLkeY/hqdefault.jpg" alt="" width="480" height="360" loading="lazy">
+            <span class="ao-vivo-play" aria-hidden="true"></span>
+          </button>
         </div>
         <p class="subtitulo centro">Ao vivo · É Bom Poder Te Amar</p>
         <a class="ao-vivo" href="https://www.instagram.com/reel/DBp2M8-uGoo/" target="_blank" rel="noopener noreferrer" data-goatcounter-click="instagram-ao-vivo">
-          <img src="imagens/ao-vivo-e-bom-poder-te-amar.jpg" alt="" width="1057" height="1321" loading="lazy">
+          <img src="imagens/ao-vivo-e-bom-poder-te-amar.jpg" alt="" width="720" height="900" loading="lazy">
           <span class="ao-vivo-play" aria-hidden="true"></span>
           <span class="ao-vivo-texto"><svg class="icone" aria-hidden="true"><use href="#i-instagram"/></svg>"É Bom Poder Te Amar" ao vivo: assistir no Instagram</span>
         </a>
@@ -993,7 +1066,11 @@
           <li><a href="https://open.spotify.com/track/4kGsVajnJMtm16xvfVMIV0" target="_blank" rel="noopener noreferrer">Tentando Te Encontrar <span class="genero">MPB</span></a></li>
         </ul>
         <div class="player">
-          <iframe src="https://open.spotify.com/embed/artist/7JbbaZAEvO36RrxdyiMwqp?theme=0" title="Músicas de Josimarth Dias no Spotify" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <button class="capa-player capa-spotify" type="button" data-carregar="spotify">
+            <svg class="icone" aria-hidden="true"><use href="#i-spotify"/></svg>
+            <span class="capa-spotify-titulo">Ouvir as músicas aqui no site</span>
+            <span class="capa-spotify-sub">Toque para abrir o player do Spotify</span>
+          </button>
         </div>
         <p class="subtitulo seguir">Siga e ouça</p>
         <p class="disponivel">Siga Josimarth na sua plataforma preferida e receba cada lançamento em primeira mão.</p>
@@ -1157,6 +1234,31 @@
   </footer>
 
   <a class="whatsapp-flutuante" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20show." target="_blank" rel="noopener noreferrer" aria-label="Falar com Josimarth no WhatsApp" data-goatcounter-click="whatsapp-flutuante"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+
+  <!-- Troca a capa pelo player do YouTube ou do Spotify só quando a pessoa toca -->
+  <script>
+    document.querySelectorAll("[data-carregar]").forEach(function (capa) {
+      capa.addEventListener("click", function () {
+        var tipo = capa.getAttribute("data-carregar");
+        var player = document.createElement("iframe");
+        if (tipo === "youtube") {
+          player.src = "https://www.youtube-nocookie.com/embed/T5wkTmgLkeY?autoplay=1";
+          player.title = "Josimarth Dias – Não Temerei (vídeo)";
+          player.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+          player.referrerPolicy = "strict-origin-when-cross-origin";
+          player.allowFullscreen = true;
+        } else {
+          player.src = "https://open.spotify.com/embed/artist/7JbbaZAEvO36RrxdyiMwqp?theme=0";
+          player.title = "Músicas de Josimarth Dias no Spotify";
+          player.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+        }
+        capa.replaceWith(player);
+        if (window.goatcounter && window.goatcounter.count) {
+          window.goatcounter.count({ path: "player-" + tipo, title: "Abriu o player " + tipo, event: true });
+        }
+      });
+    });
+  </script>
 
   <!-- Pedido de orçamento: junta as respostas numa mensagem e abre o WhatsApp. Nada é guardado no site. -->
   <script>
