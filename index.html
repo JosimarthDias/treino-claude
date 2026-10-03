@@ -776,6 +776,10 @@
     /* Agenda e contato */
     .cartao .email-texto {
       margin: 24px 0 0;
+    }
+
+    .cartao .email-texto + .email-texto {
+      margin-top: 8px;
       font-size: 0.95rem;
     }
 
@@ -860,12 +864,19 @@
       background: #25d366;
       color: #0f172a;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-      transition: transform 0.2s;
+      transition: transform 0.2s, opacity 0.3s, visibility 0.3s;
     }
 
     .whatsapp-flutuante:hover,
     .whatsapp-flutuante:focus-visible {
       transform: scale(1.08);
+    }
+
+    /* Escondido enquanto a pessoa está no topo da página, para não cobrir o texto */
+    .whatsapp-flutuante.escondido {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(16px);
     }
 
     .whatsapp-flutuante .icone {
@@ -948,7 +959,7 @@
 
       .sobre p {
         font-size: 1rem;
-        text-align: justify;
+        text-align: left;
       }
 
       .orcamento {
@@ -1202,15 +1213,13 @@
       <div class="container">
         <h2>Contato</h2>
         <div class="cartao">
-          <p>Para shows, eventos e parcerias, fale direto com Josimarth pelo WhatsApp, por e-mail ou pelas redes sociais.</p>
+          <p>Para shows, eventos e parcerias, fale direto com Josimarth pelo WhatsApp ou por e-mail.</p>
           <div class="botoes">
             <a class="botao botao-whatsapp" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20show." target="_blank" rel="noopener noreferrer" data-goatcounter-click="whatsapp"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Falar no WhatsApp</a>
             <a class="botao botao-contorno" href="mailto:contato@josimarthdias.com.br?subject=Contato%20pelo%20site" data-goatcounter-click="email"><svg class="icone" aria-hidden="true"><use href="#i-email"/></svg>Enviar e-mail</a>
-            <a class="botao botao-contorno" href="https://www.instagram.com/josimarthdias_oficial/" target="_blank" rel="noopener noreferrer"><svg class="icone" aria-hidden="true"><use href="#i-instagram"/></svg>Instagram</a>
-            <a class="botao botao-contorno" href="https://www.tiktok.com/@josimarthdias" target="_blank" rel="noopener noreferrer"><svg class="icone" aria-hidden="true"><use href="#i-tiktok"/></svg>TikTok</a>
-            <a class="botao botao-contorno" href="https://open.spotify.com/artist/7JbbaZAEvO36RrxdyiMwqp" target="_blank" rel="noopener noreferrer" data-goatcounter-click="spotify"><svg class="icone" aria-hidden="true"><use href="#i-spotify"/></svg>Spotify</a>
           </div>
           <p class="email-texto">E-mail: <a href="mailto:contato@josimarthdias.com.br">contato@<wbr>josimarthdias.com.br</a></p>
+          <p class="email-texto">Siga nas redes: <a href="https://www.instagram.com/josimarthdias_oficial/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.tiktok.com/@josimarthdias" target="_blank" rel="noopener noreferrer">TikTok</a></p>
         </div>
       </div>
     </section>
@@ -1234,6 +1243,19 @@
   </footer>
 
   <a class="whatsapp-flutuante" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20show." target="_blank" rel="noopener noreferrer" aria-label="Falar com Josimarth no WhatsApp" data-goatcounter-click="whatsapp-flutuante"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+
+  <!-- Mostra o botão flutuante do WhatsApp só depois que a pessoa sai do topo -->
+  <script>
+    (function () {
+      var botao = document.querySelector(".whatsapp-flutuante");
+      var topo = document.getElementById("inicio");
+      if (!botao || !topo || !("IntersectionObserver" in window)) return;
+      botao.classList.add("escondido");
+      new IntersectionObserver(function (itens) {
+        botao.classList.toggle("escondido", itens[0].isIntersecting);
+      }, { threshold: 0.35 }).observe(topo);
+    })();
+  </script>
 
   <!-- Troca a capa pelo player do YouTube ou do Spotify só quando a pessoa toca -->
   <script>
