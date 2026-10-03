@@ -591,6 +591,46 @@
       color: var(--texto-suave);
     }
 
+    /* Galeria */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 0;
+    }
+
+    .galeria figure {
+      position: relative;
+      margin: 0;
+      aspect-ratio: 4 / 5;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--cartao);
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .galeria figure:hover img {
+      transform: scale(1.04);
+    }
+
+    .galeria figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 32px 12px 10px;
+      background: linear-gradient(to top, rgba(7, 11, 22, 0.85), transparent);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
     /* Convite (chamada para ação) */
     .convite {
       text-align: center;
@@ -970,6 +1010,15 @@
         gap: 8px;
       }
 
+      .galeria {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .galeria figcaption {
+        font-size: 0.8rem;
+      }
+
       .tipos-evento li {
         padding: 6px 12px;
         font-size: 0.85rem;
@@ -1091,6 +1140,38 @@
           <a class="botao botao-contorno" href="https://music.amazon.com.br/artists/B09Q3SB147" target="_blank" rel="noopener noreferrer" data-goatcounter-click="amazon-music"><svg class="icone" aria-hidden="true"><use href="#i-amazon"/></svg>Amazon Music</a>
           <a class="botao botao-contorno" href="https://music.youtube.com/channel/UC9mq0rFrnyPaPFfMTBwz4KQ" target="_blank" rel="noopener noreferrer" data-goatcounter-click="youtube-music"><svg class="icone" aria-hidden="true"><use href="#i-youtubemusic"/></svg>YouTube Music</a>
           <a class="botao botao-contorno" href="https://link.deezer.com/s/34z7qD0jLgjcdHvs58M2z" target="_blank" rel="noopener noreferrer" data-goatcounter-click="deezer"><svg class="icone" aria-hidden="true"><use href="#i-deezer"/></svg>Deezer</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="container">
+        <h2>Galeria</h2>
+        <div class="galeria">
+          <figure>
+            <img src="imagens/galeria-ao-vivo-banda.jpg" alt="Josimarth Dias cantando ao microfone, com a banda ao fundo" width="900" height="601" loading="lazy" style="object-position: center 30%">
+            <figcaption>Ao vivo com a banda</figcaption>
+          </figure>
+          <figure>
+            <img src="imagens/galeria-ministrando-sorrindo.jpg" alt="Josimarth Dias sorrindo, sentado com o violão em frente ao microfone" width="517" height="900" loading="lazy" style="object-position: center 25%">
+            <figcaption>Ministração</figcaption>
+          </figure>
+          <figure>
+            <img src="imagens/galeria-ministrando-camisa-branca.jpg" alt="Josimarth Dias tocando violão de camisa branca, com a bateria ao fundo" width="900" height="598" loading="lazy" style="object-position: 60% center">
+            <figcaption>Louvor ao vivo</figcaption>
+          </figure>
+          <figure>
+            <img src="imagens/galeria-igreja.jpg" alt="Josimarth Dias cantando com o violão em frente a um painel com a palavra Jesus" width="781" height="900" loading="lazy" style="object-position: center 30%">
+            <figcaption>Na igreja</figcaption>
+          </figure>
+          <figure>
+            <img src="imagens/galeria-estudio.jpg" alt="Josimarth Dias gravando com violão de nylon no estúdio" width="900" height="506" loading="lazy" style="object-position: 40% center">
+            <figcaption>No estúdio</figcaption>
+          </figure>
+          <figure>
+            <img src="imagens/galeria-retrato.jpg" alt="Retrato de Josimarth Dias segurando o violão" width="601" height="900" loading="lazy" style="object-position: center 20%">
+            <figcaption>Ensaio fotográfico</figcaption>
+          </figure>
         </div>
       </div>
     </section>
