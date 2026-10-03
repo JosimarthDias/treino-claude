@@ -472,6 +472,32 @@
       font-size: 1.1rem;
     }
 
+    .tipos-evento {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 720px;
+      margin: 24px auto 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tipos-evento li {
+      padding: 8px 16px;
+      border: 1px solid var(--borda);
+      border-radius: 999px;
+      background: var(--cartao);
+      color: var(--texto);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .tipos-evento li::before {
+      content: "♪ ";
+      color: var(--azul);
+    }
+
     /* Pedido de orçamento */
     .orcamento {
       max-width: 720px;
@@ -777,6 +803,15 @@
         padding: 24px 16px;
       }
 
+      .tipos-evento {
+        gap: 8px;
+      }
+
+      .tipos-evento li {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+
       .campos {
         grid-template-columns: 1fr;
       }
@@ -889,6 +924,18 @@
         <p class="rotulo">Agenda aberta para 2026 e 2027</p>
         <h2>Leve "A Mensagem" para sua igreja ou evento</h2>
         <p>Louvor ao vivo com voz e violão para cultos, congressos, casamentos e eventos.</p>
+        <ul class="tipos-evento" aria-label="Tipos de evento">
+          <li>Cultos</li>
+          <li>Congressos</li>
+          <li>Encontros de casais</li>
+          <li>Retiros espirituais</li>
+          <li>Retiros de Carnaval</li>
+          <li>Casamentos</li>
+          <li>Bodas de casamento</li>
+          <li>Aniversários</li>
+          <li>Aniversários de 15 anos</li>
+          <li>Eventos corporativos</li>
+        </ul>
         <form class="orcamento" id="orcamento" novalidate>
           <h3>Peça seu orçamento</h3>
           <p class="orcamento-ajuda">Preencha e toque em enviar: o WhatsApp abre com tudo já escrito. É só conferir e mandar.</p>
