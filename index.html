@@ -925,6 +925,56 @@
     }
 
     /* Tablet e celular: a foto do topo fica em cima e o texto embaixo, sem sobrepor o rosto */
+    .cartilha-grade {
+      display: grid;
+      grid-template-columns: minmax(200px, 300px) 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .cartilha-capa {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    }
+    .cartilha-texto h3 {
+      margin: 0 0 12px;
+      font-size: 1.4rem;
+    }
+    .cartilha-texto p {
+      margin: 0 0 16px;
+      color: var(--texto-suave);
+    }
+    .cartilha-pilares {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 20px;
+      padding: 0;
+      list-style: none;
+    }
+    .cartilha-pilares li {
+      padding: 6px 14px;
+      border: 1px solid var(--azul);
+      border-radius: 999px;
+      color: var(--azul-claro);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+    }
+    .cartilha-itens {
+      margin: 0 0 24px;
+      padding-left: 20px;
+      color: var(--texto);
+    }
+    .cartilha-itens li + li {
+      margin-top: 6px;
+    }
+    .cartilha-texto .botoes {
+      justify-content: flex-start;
+    }
+
     @media (max-width: 900px) {
       .destaque {
         display: block;
@@ -961,6 +1011,21 @@
 
     /* Celular */
     @media (max-width: 640px) {
+      .cartilha-grade {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .cartilha-texto .botoes {
+        justify-content: center;
+      }
+
+      .cartilha-capa {
+        max-width: 240px;
+        margin: 0 auto;
+        display: block;
+      }
+
       .marca {
         display: none;
       }
@@ -1068,6 +1133,7 @@
         <a href="#musica">Músicas</a>
         <a class="so-telas-grandes" href="#convite">Convites</a>
         <a href="#contratantes">Contratantes</a>
+        <a class="so-telas-grandes" href="#cartilha">Cartilha</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
@@ -1286,6 +1352,35 @@
         <div class="botoes">
           <a class="botao botao-whatsapp" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%2C%20li%20a%20ficha%20t%C3%A9cnica%20e%20gostaria%20de%20combinar%20os%20detalhes%20de%20um%20evento." target="_blank" rel="noopener noreferrer" data-goatcounter-click="whatsapp-ficha-tecnica"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Combinar pelo WhatsApp</a>
           <a class="botao botao-contorno" href="mailto:contato@josimarthdias.com.br?subject=Convite%20para%20evento" data-goatcounter-click="email-contratantes"><svg class="icone" aria-hidden="true"><use href="#i-email"/></svg>Enviar e-mail</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="cartilha">
+      <div class="container">
+        <h2>Cartilha da Carreira do Artista</h2>
+        <div class="cartilha-grade">
+          <img class="cartilha-capa" src="imagens/cartilha-capa.jpg" alt="Capa da Cartilha da Carreira do Artista, de Josimarth Dias" width="560" height="793" loading="lazy">
+          <div class="cartilha-texto">
+            <h3>Do zero ao 90: tudo o que aprendi para viver de música, sem precisar ser famoso</h3>
+            <p>Um guia completo em PDF, com 49 páginas e 34 capítulos, organizado pelos 4 pilares do sucesso:</p>
+            <ul class="cartilha-pilares" aria-label="Os 4 pilares">
+              <li>Conceito</li>
+              <li>Produto</li>
+              <li>Marketing</li>
+              <li>Equipe</li>
+            </ul>
+            <ul class="cartilha-itens">
+              <li>Violão e voz do primeiro acorde ao palco, com diagramas e plano de estudos</li>
+              <li>Composição, produção musical em casa e vídeos baratos para YouTube e TikTok</li>
+              <li>Lançamento no Spotify, ISRC, direitos autorais, registro e licenças</li>
+              <li>Equipamentos, como fechar shows e quanto cobrar, sempre com os custos</li>
+              <li>Gestão de carreira, música com inteligência artificial e os erros que custam caro</li>
+            </ul>
+            <div class="botoes">
+              <a class="botao botao-whatsapp" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20quero%20comprar%20a%20Cartilha%20da%20Carreira%20do%20Artista%20%28PDF%29." target="_blank" rel="noopener noreferrer" data-goatcounter-click="whatsapp-cartilha"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Quero a cartilha</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
