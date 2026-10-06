@@ -925,6 +925,56 @@
     }
 
     /* Tablet e celular: a foto do topo fica em cima e o texto embaixo, sem sobrepor o rosto */
+    .cartilha-grade {
+      display: grid;
+      grid-template-columns: minmax(200px, 300px) 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .cartilha-capa {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    }
+    .cartilha-texto h3 {
+      margin: 0 0 12px;
+      font-size: 1.4rem;
+    }
+    .cartilha-texto p {
+      margin: 0 0 16px;
+      color: var(--texto-suave);
+    }
+    .cartilha-pilares {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 20px;
+      padding: 0;
+      list-style: none;
+    }
+    .cartilha-pilares li {
+      padding: 6px 14px;
+      border: 1px solid var(--azul);
+      border-radius: 999px;
+      color: var(--azul-claro);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+    }
+    .cartilha-itens {
+      margin: 0 0 24px;
+      padding-left: 20px;
+      color: var(--texto);
+    }
+    .cartilha-itens li + li {
+      margin-top: 6px;
+    }
+    .cartilha-texto .botoes {
+      justify-content: flex-start;
+    }
+
     @media (max-width: 900px) {
       .destaque {
         display: block;
@@ -961,6 +1011,21 @@
 
     /* Celular */
     @media (max-width: 640px) {
+      .cartilha-grade {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .cartilha-texto .botoes {
+        justify-content: center;
+      }
+
+      .cartilha-capa {
+        max-width: 240px;
+        margin: 0 auto;
+        display: block;
+      }
+
       .marca {
         display: none;
       }
@@ -1068,6 +1133,7 @@
         <a href="#musica">Músicas</a>
         <a class="so-telas-grandes" href="#convite">Convites</a>
         <a href="#contratantes">Contratantes</a>
+        <a class="so-telas-grandes" href="#livro">Livro</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
@@ -1286,6 +1352,30 @@
         <div class="botoes">
           <a class="botao botao-whatsapp" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%2C%20li%20a%20ficha%20t%C3%A9cnica%20e%20gostaria%20de%20combinar%20os%20detalhes%20de%20um%20evento." target="_blank" rel="noopener noreferrer" data-goatcounter-click="whatsapp-ficha-tecnica"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Combinar pelo WhatsApp</a>
           <a class="botao botao-contorno" href="mailto:contato@josimarthdias.com.br?subject=Convite%20para%20evento" data-goatcounter-click="email-contratantes"><svg class="icone" aria-hidden="true"><use href="#i-email"/></svg>Enviar e-mail</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="livro">
+      <div class="container">
+        <h2>Livro: Música Dá Dinheiro</h2>
+        <div class="cartilha-grade">
+          <a href="livro"><img class="cartilha-capa" src="imagens/livro-capa.jpg" alt="Capa do livro Música Dá Dinheiro, de Josimarth Dias" width="525" height="840" loading="lazy"></a>
+          <div class="cartilha-texto">
+            <h3>O que ninguém te conta sobre viver de música</h3>
+            <p>Livro digital com 49 capítulos e 5 bônus. Mostra, com números reais, como transformar música em profissão no Brasil:</p>
+            <ul class="cartilha-itens">
+              <li>Equipamentos item por item, com preço, para shows e para gravar em casa</li>
+              <li>Quanto cobrar, como fechar shows e contratos sem armadilhas</li>
+              <li>Lançamento nas plataformas, direitos autorais, ECAD e impostos</li>
+              <li>Redes sociais, monetização e o mapa dos golpes contra músicos</li>
+              <li>Modelos de contrato, planilhas e um plano para os seus primeiros 90 dias</li>
+            </ul>
+            <div class="botoes">
+              <a class="botao botao-contorno" href="livro" data-goatcounter-click="site-livro">Conhecer o livro</a>
+              <a class="botao" href="https://pay.kiwify.com.br/meTmpHD" target="_blank" rel="noopener noreferrer" data-goatcounter-click="kiwify-livro-inicio">Comprar por R$ 37</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
