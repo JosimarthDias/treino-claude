@@ -209,6 +209,57 @@
       font-size: 1.15rem;
     }
 
+    /* Cartão do livro no destaque do topo */
+    .destaque-livro {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 28px;
+      padding: 10px 18px 10px 10px;
+      border: 1px solid rgba(245, 184, 46, 0.55);
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.78);
+      color: var(--texto);
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .destaque-livro:hover,
+    .destaque-livro:focus-visible {
+      border-color: #f5b82e;
+      transform: translateY(-2px);
+    }
+
+    .destaque-livro img {
+      width: 52px;
+      height: auto;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .destaque-livro span {
+      display: block;
+      line-height: 1.35;
+    }
+
+    .destaque-livro .novo {
+      color: #f5b82e;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .destaque-livro .titulo {
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .destaque-livro .chamada {
+      color: var(--texto-suave);
+      font-size: 0.9rem;
+    }
+
     /* Botões */
     .botoes {
       display: flex;
@@ -889,41 +940,6 @@
       text-decoration: none;
     }
 
-    /* Botão do WhatsApp sempre visível no canto da tela */
-    .whatsapp-flutuante {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 20;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: #25d366;
-      color: #0f172a;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-      transition: transform 0.2s, opacity 0.3s, visibility 0.3s;
-    }
-
-    .whatsapp-flutuante:hover,
-    .whatsapp-flutuante:focus-visible {
-      transform: scale(1.08);
-    }
-
-    /* Escondido enquanto a pessoa está no topo da página, para não cobrir o texto */
-    .whatsapp-flutuante.escondido {
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(16px);
-    }
-
-    .whatsapp-flutuante .icone {
-      width: 30px;
-      height: 30px;
-    }
-
     /* Tablet e celular: a foto do topo fica em cima e o texto embaixo, sem sobrepor o rosto */
     .cartilha-grade {
       display: grid;
@@ -1151,6 +1167,14 @@
             <a class="botao" href="#musica">Ouvir agora</a>
             <a class="botao botao-contorno" href="#convite">Convidar para ministrar</a>
           </div>
+          <a class="destaque-livro" href="livro" data-goatcounter-click="destaque-livro">
+            <img src="imagens/livro-capa.jpg" alt="" width="525" height="840">
+            <span>
+              <span class="novo">Novo · Livro digital</span>
+              <span class="titulo">Música Dá Dinheiro</span>
+              <span class="chamada">O que ninguém te conta sobre viver de música →</span>
+            </span>
+          </a>
         </div>
       </div>
     </section>
@@ -1412,21 +1436,6 @@
       <a class="topo" href="#inicio">Voltar ao topo ↑</a>
     </div>
   </footer>
-
-  <a class="whatsapp-flutuante" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20show." target="_blank" rel="noopener noreferrer" aria-label="Falar com Josimarth no WhatsApp" data-goatcounter-click="whatsapp-flutuante"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
-
-  <!-- Mostra o botão flutuante do WhatsApp só depois que a pessoa sai do topo -->
-  <script>
-    (function () {
-      var botao = document.querySelector(".whatsapp-flutuante");
-      var topo = document.getElementById("inicio");
-      if (!botao || !topo || !("IntersectionObserver" in window)) return;
-      botao.classList.add("escondido");
-      new IntersectionObserver(function (itens) {
-        botao.classList.toggle("escondido", itens[0].isIntersecting);
-      }, { threshold: 0.35 }).observe(topo);
-    })();
-  </script>
 
   <!-- Troca a capa pelo player do YouTube ou do Spotify só quando a pessoa toca -->
   <script>
