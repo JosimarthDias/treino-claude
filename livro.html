@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Música Dá Dinheiro · Livro de Josimarth Dias</title>
+<meta name="description" content="O livro que mostra, com números reais, como viver de música no Brasil. 49 capítulos, modelos de contrato, planilhas e plano de 90 dias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Mono:wght@400;600&display=swap">
+  <meta property="og:type" content="book">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Josimarth Dias">
+  <meta property="og:title" content="Música Dá Dinheiro: o que ninguém te conta sobre viver de música">
+  <meta property="og:description" content="O livro que mostra, com números reais, como viver de música no Brasil. 49 capítulos e 5 bônus.">
+  <meta property="og:url" content="https://josimarthdias.com.br/livro">
+  <meta property="og:image" content="https://josimarthdias.com.br/imagens/livro-compartilhar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0c1424">
+  <link rel="canonical" href="https://josimarthdias.com.br/livro">
+  <link rel="apple-touch-icon" href="imagens/icone.png">
+<style>
+/* Layout: coluna única de leitura; a capa abre, os números reais do livro em "comanda de preços", oferta no fim. Tema escuro único, como a capa. */
+:root{
+  --noite:#0c1424;      /* fundo, azul-noite da capa */
+  --palco:#152036;      /* superfícies */
+  --linha:#26334f;      /* divisórias */
+  --ambar:#f5b82e;      /* destaque, luz de palco */
+  --texto:#e8e4da;      /* texto corrido */
+  --suave:#9aa6bd;      /* texto secundário */
+  --tinta:#0c1424;      /* texto sobre âmbar */
+  --display:"Anton","Impact","Arial Narrow",sans-serif;
+  --corpo:"Literata",Georgia,"Times New Roman",serif;
+  --dado:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--noite);color:var(--texto);font:400 1.06rem/1.65 var(--corpo);margin:0}
+.wrap{max-width:44rem;margin:0 auto;padding-inline:20px}
+section{padding-block:3.2rem;border-top:1px solid var(--linha)}
+h1,h2{font-family:var(--display);font-weight:400;letter-spacing:.01em;line-height:1.02;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.9rem,6vw,2.6rem);text-transform:uppercase}
+h2 em{font-style:normal;color:var(--ambar)}
+h3{font:600 1.1rem/1.3 var(--corpo);margin:0}
+p{margin:0}
+.pilha{display:flex;flex-direction:column;gap:1rem}
+.rotulo{font:600 .74rem/1 var(--dado);letter-spacing:.14em;text-transform:uppercase;color:var(--ambar)}
+.suave{color:var(--suave)}
+a{color:var(--ambar)}
+:focus-visible{outline:3px solid var(--ambar);outline-offset:3px}
+
+/* abertura */
+.abre{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,15rem);gap:2rem;align-items:center;padding-block:2.6rem 3rem}
+.abre h1{font-size:clamp(2.6rem,9vw,4.4rem);text-transform:uppercase}
+.abre h1 span{color:var(--ambar);display:block}
+.abre .sub{font-size:1.15rem;font-style:italic;color:var(--texto)}
+.capa{width:100%;height:auto;max-width:15rem;aspect-ratio:525/840;border-radius:4px;box-shadow:0 30px 60px -20px #000,0 0 0 1px var(--linha);transform:rotate(2deg)}
+@media (max-width:620px){.abre{grid-template-columns:1fr}.capa{order:-1;max-width:11rem;margin:0 auto;transform:none}}
+
+.botao{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--ambar);color:var(--tinta);text-decoration:none;font:400 1.25rem/1 var(--display);letter-spacing:.04em;text-transform:uppercase;padding:1.05rem 1.6rem;border-radius:3px;transition:transform .15s}
+.botao:hover{transform:translateY(-2px)}
+.botao small{font:600 .8rem/1 var(--dado);letter-spacing:0;text-transform:none}
+.selos{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font:400 .8rem/1.4 var(--dado);color:var(--suave)}
+
+/* comanda de preços: os números do livro */
+.comanda{background:var(--palco);border:1px dashed var(--linha);padding:1.2rem 1.2rem .6rem;font-family:var(--dado);font-size:.9rem}
+.comanda .lin{display:flex;justify-content:space-between;gap:1rem;padding-block:.55rem;border-bottom:1px dotted var(--linha)}
+.comanda .lin:last-child{border-bottom:0}
+.comanda .lin span:last-child{color:var(--ambar);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.lista{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.8rem}
+.lista li{padding-left:1.4rem;position:relative}
+.lista li::before{content:"";position:absolute;left:0;top:.62em;width:.6rem;height:2px;background:var(--ambar)}
+.nao li::before{background:var(--suave);transform:rotate(45deg);top:.68em}
+
+/* setlist: as 13 partes em ordem */
+.setlist{list-style:none;margin:0;padding:0;counter-reset:p -1}
+.setlist li{display:grid;grid-template-columns:2.6rem minmax(0,1fr) auto;gap:.8rem;align-items:baseline;padding-block:.7rem;border-bottom:1px solid var(--linha)}
+.setlist li::before{counter-increment:p;content:counter(p,decimal-leading-zero);font:400 1.3rem/1 var(--display);color:var(--ambar)}
+.setlist b{font-weight:600}
+.setlist i{display:block;font-size:.92rem;color:var(--suave)}
+.setlist .caps{font:400 .75rem/1 var(--dado);color:var(--suave);white-space:nowrap}
+
+.bonus{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.bonus article{border:1px solid var(--linha);padding:1.1rem;display:flex;flex-direction:column;gap:.45rem}
+.bonus .tipo{font:600 .7rem/1 var(--dado);letter-spacing:.1em;text-transform:uppercase;color:var(--ambar)}
+.bonus p{font-size:.95rem;color:var(--suave)}
+
+.cena{border-left:3px solid var(--ambar);padding-left:1.1rem;font-style:italic;font-size:1.12rem}
+
+.oferta{background:var(--palco);border:1px solid var(--ambar);padding:1.8rem 1.4rem;text-align:center;display:flex;flex-direction:column;gap:1rem;align-items:center}
+.preco{font:400 clamp(3.4rem,13vw,5rem)/1 var(--display);color:var(--ambar)}
+.preco small{font-size:.35em;vertical-align:.9em;margin-right:.15em}
+.de{font-family:var(--dado);font-size:.9rem;color:var(--suave)}
+.de s{color:var(--suave)}
+
+details{border-bottom:1px solid var(--linha);padding-block:.9rem}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::after{content:"+";font-family:var(--dado);color:var(--ambar)}
+details[open] summary::after{content:"−"}
+details p{margin-top:.6rem;color:var(--suave)}
+
+footer{padding-block:2.5rem 3rem;border-top:1px solid var(--linha);font:400 .82rem/1.6 var(--dado);color:var(--suave)}
+@media (prefers-reduced-motion:reduce){.botao{transition:none}.capa{transform:none}}
+</style>
+
+</head>
+<body>
+<main class="wrap">
+  <header class="abre">
+    <div class="pilha">
+      <p class="rotulo">Livro digital · Josimarth Dias</p>
+      <h1>Música<span>dá dinheiro</span></h1>
+      <p class="sub">O que ninguém te conta sobre viver de música no Brasil, com os números reais.</p>
+      <p>Quanto custa montar um show, gravar uma música, fazer um clipe, quanto cobrar, como lançar nas plataformas, como não cair em golpe e como transformar talento em profissão.</p>
+      <div><a class="botao" href="#oferta">Quero o livro <small>R$ 37</small></a></div>
+      <div class="selos"><span>49 capítulos</span><span>284 páginas</span><span>5 bônus</span><span>Garantia de 7 dias</span></div>
+    </div>
+    <img class="capa" src="imagens/livro-capa.jpg" width="525" height="840" alt="Capa do livro Música Dá Dinheiro, com um músico iluminado no palco">
+  </header>
+
+  <section class="pilha">
+    <p class="cena">Você toca bem. Já cantou em barzinho, em igreja, em festa de amigo. Alguém sempre diz: “você devia viver disso”. Mas ninguém explica como.</p>
+    <p>Quanto cobrar sem espantar o contratante? O que comprar primeiro, a caixa de som ou o microfone? Vale gravar em estúdio ou em casa? Por que a música tem 2 mil plays e rende centavos? O contrato que te mandaram é bom?</p>
+    <p>A maioria aprende isso errando, perdendo dinheiro e, às vezes, desistindo. Este livro junta o que normalmente leva anos para aprender em um só lugar, com valores em reais, leis brasileiras e exemplos de quem chegou lá e de quem não chegou.</p>
+  </section>
+
+  <section class="pilha">
+    <p class="rotulo">Números que estão no livro</p>
+    <h2>Sem achismo. <em>Com preço.</em></h2>
+    <p>Cada equipamento discriminado, item por item, com faixa de preço pesquisada no mercado brasileiro em 2026.</p>
+    <div class="comanda" role="list">
+      <div class="lin" role="listitem"><span>Kit básico de estúdio em casa</span><span>R$ 4.110</span></div>
+      <div class="lin" role="listitem"><span>Kit intermediário de estúdio</span><span>R$ 17.670</span></div>
+      <div class="lin" role="listitem"><span>Single produzido, versão econômica</span><span>R$ 1.760</span></div>
+      <div class="lin" role="listitem"><span>Single produzido, versão profissional</span><span>R$ 22.400</span></div>
+      <div class="lin" role="listitem"><span>Videoclipe econômico</span><span>R$ 2.000</span></div>
+      <div class="lin" role="listitem"><span>Fatia do streaming paga aos artistas no Brasil</span><span>87%</span></div>
+    </div>
+    <p class="suave" style="font-size:.9rem">E o livro mostra a conta para você refazer com os seus números.</p>
+  </section>
+
+  <section class="pilha">
+    <p class="rotulo">O repertório</p>
+    <h2>13 partes, <em>na ordem em que a carreira acontece</em></h2>
+    <ol class="setlist">
+      <li><div><b>A música e você</b><i>de onde vem a música e o que ela faz no cérebro</i></div><span class="caps">cap. 1–3</span></li>
+      <li><div><b>O chamado</b><i>dá para viver de música? qual é o seu caminho</i></div><span class="caps">cap. 4–6</span></li>
+      <li><div><b>Formação</b><i>onde estudar mesmo sem dinheiro, voz, instrumento e teoria</i></div><span class="caps">cap. 7–9</span></li>
+      <li><div><b>Criação</b><i>como nascem as canções e como compor para quem vai ouvir</i></div><span class="caps">cap. 10–12</span></li>
+      <li><div><b>Identidade</b><i>conceito, marca, imagem e fotos</i></div><span class="caps">cap. 13–15</span></li>
+      <li><div><b>Produção</b><i>estúdio em casa, acústica, cabine, equipamentos, IA e vídeo</i></div><span class="caps">cap. 16–22</span></li>
+      <li><div><b>Palco</b><i>primeiro show, estrutura, som, a profissão de DJ e saúde</i></div><span class="caps">cap. 23–28</span></li>
+      <li><div><b>Mercado</b><i>fechar shows, quanto cobrar, contratos e o mapa dos golpes</i></div><span class="caps">cap. 29–32</span></li>
+      <li><div><b>Digital</b><i>lançamento, algoritmo, monetização, lives e anúncios</i></div><span class="caps">cap. 33–36</span></li>
+      <li><div><b>Direitos</b><i>direito autoral, ISRC, ECAD, associações e licenças</i></div><span class="caps">cap. 37–39</span></li>
+      <li><div><b>Gestão</b><i>equipe, MEI, impostos, editais e menores de idade</i></div><span class="caps">cap. 40–42</span></li>
+      <li><div><b>Histórias e lições</b><i>quem chegou lá, os erros e por que é tão difícil</i></div><span class="caps">cap. 43–46</span></li>
+      <li><div><b>Seu plano</b><i>trilhas de carreira com custos e os seus primeiros 90 dias</i></div><span class="caps">cap. 47–49</span></li>
+    </ol>
+    <p class="suave" style="font-size:.95rem">Mais 8 anexos: modelos de proposta, contrato e split sheet, checklist de lançamento, glossário, diário e índice de assuntos.</p>
+  </section>
+
+  <section class="pilha">
+    <p class="rotulo">Para quem é</p>
+    <h2>Escrito para <em>quem está começando</em></h2>
+    <ul class="lista">
+      <li>Quem canta ou toca e quer transformar isso em renda, mesmo que hoje seja só um sonho.</li>
+      <li>Quem já faz shows mas não sabe quanto cobrar, nem como se proteger em contrato.</li>
+      <li>Quem quer gravar e lançar as próprias músicas sem jogar dinheiro fora.</li>
+      <li>Pais de jovens músicos que querem entender o caminho e as regras para menores.</li>
+      <li>Professores de música e líderes de ministério que orientam novos talentos.</li>
+    </ul>
+    <h3 style="margin-top:1rem">Não é para quem procura</h3>
+    <ul class="lista nao">
+      <li>Fórmula de fama rápida ou promessa de ficar rico. O livro mostra caminhos, custos e riscos reais.</li>
+      <li>Atalho de comprar seguidores ou plays. O livro explica por que isso pode derrubar o seu canal.</li>
+    </ul>
+  </section>
+
+  <section class="pilha">
+    <p class="rotulo">Junto com o livro</p>
+    <h2>5 bônus <em>para usar no dia seguinte</em></h2>
+    <div class="bonus">
+      <article><span class="tipo">Word editável</span><h3>Modelos de contrato</h3><p>Proposta de show, contrato de apresentação, autorização de uso, split sheet e contrato com empresário. Basta preencher.</p></article>
+      <article><span class="tipo">Planilha</span><h3>Preço do show e finanças</h3><p>Coloque cachê, músicos, transporte e impostos, e a planilha calcula o preço mínimo. Inclui controle do mês e metas de 90 dias.</p></article>
+      <article><span class="tipo">Planilha</span><h3>Preços de equipamentos</h3><p>Instrumentos, cabos, microfones, caixas, placas, pedestais e acústica, item por item, com faixas de preço.</p></article>
+      <article><span class="tipo">PDF para imprimir</span><h3>Diário de bordo</h3><p>Plano de 90 dias, rotina semanal, registro de shows e lançamentos, checklist do show e autoavaliação.</p></article>
+      <article><span class="tipo">PDF</span><h3>Capítulo “O mapa dos golpes”</h3><p>Em separado, para você mandar a um amigo músico antes que ele assine algo errado.</p></article>
+    </div>
+  </section>
+
+  <section class="pilha">
+    <p class="rotulo">Quem escreveu</p>
+    <h2>Josimarth <em>Dias</em></h2>
+    <p>Cantor, compositor e violonista de Brasília, à frente do projeto A Mensagem. Escreveu o livro que gostaria de ter lido quando começou: com as respostas práticas que custaram tempo e dinheiro para descobrir, revisadas com dados e leis atuais.</p>
+    <p class="suave"><a href="./">josimarthdias.com.br</a></p>
+  </section>
+
+  <section id="oferta">
+    <div class="oferta">
+      <p class="rotulo">Preço de lançamento</p>
+      <p class="de">de <s>R$ 47</s> por</p>
+      <p class="preco"><small>R$</small>37</p>
+      <p class="suave">ou em até 12x no cartão · Pix e boleto · acesso imediato</p>
+      <a class="botao" href="https://pay.kiwify.com.br/meTmpHD" target="_blank" rel="noopener" data-goatcounter-click="kiwify-livro">Comprar agora</a>
+      <p style="font-size:.95rem"><b>Garantia de 7 dias.</b> Se não for para você, peça o reembolso dentro de 7 dias pela própria Kiwify e recebe 100% do valor de volta.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="rotulo">Perguntas frequentes</p>
+    <details><summary>Como recebo o livro?</summary><p>Logo após a confirmação do pagamento, a Kiwify envia o acesso para o seu e-mail. Você baixa o PDF e os bônus na área do aluno.</p></details>
+    <details><summary>Consigo ler no celular?</summary><p>Sim. É um PDF que abre no celular, no tablet, no computador e no Kindle (enviando o arquivo para o aplicativo).</p></details>
+    <details><summary>Preciso saber teoria musical?</summary><p>Não. O livro explica cada termo técnico quando ele aparece e tem um glossário no final.</p></details>
+    <details><summary>Serve para quem toca em igreja, em banda ou é DJ?</summary><p>Sim. Há trechos específicos para músicos de igreja, bandas e DJs, além de quem segue carreira solo.</p></details>
+    <details><summary>Os preços vão ficar desatualizados?</summary><p>Os valores são de 2026 e servem como referência de ordem de grandeza. O livro ensina a fazer a conta, e a planilha bônus deixa você atualizar os números.</p></details>
+    <details><summary>O livro garante que vou ganhar dinheiro?</summary><p>Não, e nenhum livro honesto garante. Ele mostra os caminhos, os custos, os riscos e os erros mais comuns, para que as suas decisões sejam melhores.</p></details>
+    <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. Peça o reembolso pela Kiwify e o valor volta integralmente.</p></details>
+  </section>
+
+  <section class="pilha" style="text-align:center;align-items:center">
+    <h2>A música é arte. <em>A carreira é conta.</em></h2>
+    <a class="botao" href="#oferta">Quero o livro <small>R$ 37</small></a>
+  </section>
+
+  <footer>
+    <p>Música Dá Dinheiro © 2026 Josimarth Dias · Pagamento processado pela Kiwify</p>
+    <p>Contato: contato@josimarthdias.com.br · WhatsApp (61) 99918-1424</p>
+    <p>Este livro tem caráter educativo e não substitui orientação de advogado, contador ou profissional de saúde.</p>
+  </footer>
+</main>
+
+<script data-goatcounter="https://josimarthdias.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
