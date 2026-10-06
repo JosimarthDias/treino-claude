@@ -934,6 +934,41 @@
       text-decoration: none;
     }
 
+    /* Botão do WhatsApp sempre visível no canto da tela */
+    .whatsapp-flutuante {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #0f172a;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s, opacity 0.3s, visibility 0.3s;
+    }
+
+    .whatsapp-flutuante:hover,
+    .whatsapp-flutuante:focus-visible {
+      transform: scale(1.08);
+    }
+
+    /* Escondido enquanto a pessoa está no topo da página, para não cobrir o texto */
+    .whatsapp-flutuante.escondido {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(16px);
+    }
+
+    .whatsapp-flutuante .icone {
+      width: 30px;
+      height: 30px;
+    }
+
     /* Tablet e celular: a foto do topo fica em cima e o texto embaixo, sem sobrepor o rosto */
     .cartilha-grade {
       display: grid;
@@ -1400,7 +1435,7 @@
       <div class="container">
         <h2>Contato</h2>
         <div class="cartao">
-          <p>Para shows, eventos e parcerias, fale com Josimarth por e-mail.</p>
+          <p>Para shows, eventos e parcerias, fale com Josimarth pelo WhatsApp, no botão verde no canto da tela, ou por e-mail.</p>
           <div class="botoes">
             <a class="botao botao-contorno" href="mailto:contato@josimarthdias.com.br?subject=Contato%20pelo%20site" data-goatcounter-click="email"><svg class="icone" aria-hidden="true"><use href="#i-email"/></svg>Enviar e-mail</a>
           </div>
@@ -1427,6 +1462,21 @@
       <a class="topo" href="#inicio">Voltar ao topo ↑</a>
     </div>
   </footer>
+
+  <a class="whatsapp-flutuante" href="https://wa.me/5561999181424?text=Ol%C3%A1%2C%20Josimarth%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20show%20ou%20convite." target="_blank" rel="noopener noreferrer" aria-label="Falar com Josimarth no WhatsApp" data-goatcounter-click="whatsapp-flutuante"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+
+  <!-- Mostra o botão flutuante do WhatsApp só depois que a pessoa sai do topo -->
+  <script>
+    (function () {
+      var botao = document.querySelector(".whatsapp-flutuante");
+      var topo = document.getElementById("inicio");
+      if (!botao || !topo || !("IntersectionObserver" in window)) return;
+      botao.classList.add("escondido");
+      new IntersectionObserver(function (itens) {
+        botao.classList.toggle("escondido", itens[0].isIntersecting);
+      }, { threshold: 0.35 }).observe(topo);
+    })();
+  </script>
 
   <!-- Troca a capa pelo player do YouTube ou do Spotify só quando a pessoa toca -->
   <script>
