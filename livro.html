@@ -51,16 +51,29 @@ p{margin:0}
 a{color:var(--ambar)}
 :focus-visible{outline:3px solid var(--ambar);outline-offset:3px}
 
-/* abertura */
-.abre{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,15rem);gap:2rem;align-items:center;padding-block:2.6rem 3rem}
+/* abertura: no celular, capa pequena ao lado do título e compra já na primeira tela */
+.abre{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,15rem);grid-template-areas:". capa" "titulo capa" "sub capa" "compra capa" "selos capa" "texto capa" ". capa";grid-template-rows:1fr repeat(5,auto) 1fr;column-gap:2rem;row-gap:1rem;align-items:center;padding-block:2.6rem 3rem}
+.abre .titulo{grid-area:titulo;display:flex;flex-direction:column;gap:.8rem}
 .abre h1{font-size:clamp(2.6rem,9vw,4.4rem);text-transform:uppercase}
 .abre h1 span{color:var(--ambar);display:block}
-.abre .sub{font-size:1.15rem;font-style:italic;color:var(--texto)}
-.capa{width:100%;height:auto;max-width:15rem;aspect-ratio:525/840;border-radius:4px;box-shadow:0 30px 60px -20px #000,0 0 0 1px var(--linha);transform:rotate(2deg)}
-@media (max-width:620px){.abre{grid-template-columns:1fr}.capa{order:-1;max-width:11rem;margin:0 auto;transform:none}}
+.abre .sub{grid-area:sub;font-size:1.15rem;font-style:italic;color:var(--texto)}
+.abre .compra{grid-area:compra;display:flex;flex-direction:column;align-items:flex-start;gap:.7rem}
+.abre .selos{grid-area:selos}
+.abre .texto{grid-area:texto}
+.precotopo{font:400 .9rem/1.4 var(--dado);color:var(--suave)}
+.precotopo b{font:400 1.7rem/1 var(--display);color:var(--ambar);margin-inline:.15rem}
+.capa{grid-area:capa;width:100%;height:auto;max-width:15rem;aspect-ratio:525/840;border-radius:4px;box-shadow:0 30px 60px -20px #000,0 0 0 1px var(--linha);transform:rotate(2deg)}
+@media (max-width:620px){
+  .abre{grid-template-columns:5.5rem minmax(0,1fr);grid-template-areas:"capa titulo" "sub sub" "compra compra" "selos selos" "texto texto";grid-template-rows:none;column-gap:1rem;padding-block:1.2rem 2.4rem}
+  .abre h1{font-size:2.3rem}
+  .abre .sub{font-size:1.05rem}
+  .capa{max-width:5.5rem;transform:none;box-shadow:0 12px 24px -10px #000,0 0 0 1px var(--linha)}
+  .abre .compra{align-items:stretch}
+}
 
 .botao{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--ambar);color:var(--tinta);text-decoration:none;font:400 1.25rem/1 var(--display);letter-spacing:.04em;text-transform:uppercase;padding:1.05rem 1.6rem;border-radius:3px;transition:transform .15s}
 .botao:hover{transform:translateY(-2px)}
+.botao-contorno{background:transparent;color:var(--ambar);border:1px solid var(--ambar);font-size:1rem;padding:.85rem 1.3rem}
 .botao small{font:600 .8rem/1 var(--dado);letter-spacing:0;text-transform:none}
 .selos{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font:400 .8rem/1.4 var(--dado);color:var(--suave)}
 
@@ -108,7 +121,7 @@ details p{margin-top:.6rem;color:var(--suave)}
 .estreita{max-width:44rem;margin-inline:auto;width:100%}
 @media (min-width:960px){
   .wrap{max-width:68rem}
-  .abre{grid-template-columns:minmax(0,1fr) minmax(0,19rem);gap:4rem;padding-block:4rem}
+  .abre{grid-template-columns:minmax(0,1fr) minmax(0,19rem);column-gap:4rem;padding-block:4rem}
   .capa{max-width:19rem}
   .duas{display:grid;grid-template-columns:17rem minmax(0,1fr);column-gap:3.5rem;align-items:start}
   .duas .cab{position:sticky;top:2rem}
@@ -140,16 +153,19 @@ footer{padding-block:2.5rem 6rem;border-top:1px solid var(--linha);font:400 .82r
 <body>
 <main class="wrap">
   <header class="abre">
-    <div class="pilha">
+    <div class="titulo">
       <p class="rotulo">Livro digital · Josimarth Dias</p>
       <h1>Música<span>dá dinheiro</span></h1>
-      <p class="sub">O que ninguém te conta sobre viver de música no Brasil, com os números reais.</p>
-      <p>Quanto custa montar um show, gravar uma música, fazer um clipe, quanto cobrar, como lançar nas plataformas, como não cair em golpe e como transformar talento em profissão.</p>
-      <div><a class="botao" href="#oferta">Quero o livro <small>R$ 37</small></a></div>
-      <div class="selos"><span>49 capítulos</span><span>PDF + EPUB</span><span>5 bônus</span><span>Garantia de 7 dias</span></div>
-      <a class="gratis" href="arquivos/capitulo-gratis-o-mapa-dos-golpes.pdf" target="_blank" rel="noopener" data-goatcounter-click="capitulo-gratis" data-goatcounter-title="Livro: abriu o capítulo grátis">Leia um capítulo grátis antes de comprar →</a>
     </div>
     <img class="capa" src="imagens/livro-capa.jpg" width="525" height="840" alt="Capa do livro Música Dá Dinheiro, com um músico iluminado no palco">
+    <p class="sub">O que ninguém te conta sobre viver de música no Brasil, com os números reais.</p>
+    <div class="compra">
+      <p class="precotopo">de <s>R$ 47</s> por <b>R$ 37</b> · Pix ou 12x no cartão</p>
+      <a class="botao" href="https://pay.kiwify.com.br/meTmpHD" data-goatcounter-click="kiwify-livro-topo" data-goatcounter-title="Livro: Comprar (topo)">Comprar agora</a>
+      <a class="botao botao-contorno" href="arquivos/capitulo-gratis-o-mapa-dos-golpes.pdf" data-goatcounter-click="capitulo-gratis" data-goatcounter-title="Livro: abriu o capítulo grátis">Ler um capítulo grátis</a>
+    </div>
+    <div class="selos"><span>49 capítulos</span><span>PDF + EPUB</span><span>5 bônus</span><span>Garantia de 7 dias</span></div>
+    <p class="texto">Quanto custa montar um show, gravar uma música, fazer um clipe, quanto cobrar, como lançar nas plataformas, como não cair em golpe e como transformar talento em profissão.</p>
   </header>
 
   <section class="pilha estreita">
@@ -204,12 +220,12 @@ footer{padding-block:2.5rem 6rem;border-top:1px solid var(--linha);font:400 .82r
     <p class="suave">Tabelas com preço, ilustrações que explicam o equipamento e checklists para marcar.</p></div>
     <div class="corpo">
       <div class="paginas">
-        <figure><a href="imagens/livro-pagina-1.jpg" target="_blank" rel="noopener"><img src="imagens/livro-pagina-1.jpg" width="607" height="910" loading="lazy" alt="Página de abertura do capítulo 30, Quanto cobrar, com a tabela de cachês de referência"></a><figcaption>Cap. 30 · Quanto cobrar</figcaption></figure>
-        <figure><a href="imagens/livro-pagina-2.jpg" target="_blank" rel="noopener"><img src="imagens/livro-pagina-2.jpg" width="607" height="910" loading="lazy" alt="Página com ilustração do microfone dinâmico e do condensador por dentro e dos padrões polares"></a><figcaption>Cap. 18 · Microfones por dentro</figcaption></figure>
-        <figure><a href="imagens/livro-pagina-3.jpg" target="_blank" rel="noopener"><img src="imagens/livro-pagina-3.jpg" width="607" height="910" loading="lazy" alt="Página com a tabela do Kit 2 de home studio, item por item, com total de R$ 17.670"></a><figcaption>Cap. 18 · Kit de estúdio, item por item</figcaption></figure>
-        <figure><a href="imagens/livro-pagina-4.jpg" target="_blank" rel="noopener"><img src="imagens/livro-pagina-4.jpg" width="607" height="910" loading="lazy" alt="Página do anexo E, checklist de lançamento de um single"></a><figcaption>Anexo E · Checklist de lançamento</figcaption></figure>
+        <figure><a href="imagens/livro-pagina-1.jpg"><img src="imagens/livro-pagina-1.jpg" width="607" height="910" loading="lazy" alt="Página de abertura do capítulo 30, Quanto cobrar, com a tabela de cachês de referência"></a><figcaption>Cap. 30 · Quanto cobrar</figcaption></figure>
+        <figure><a href="imagens/livro-pagina-2.jpg"><img src="imagens/livro-pagina-2.jpg" width="607" height="910" loading="lazy" alt="Página com ilustração do microfone dinâmico e do condensador por dentro e dos padrões polares"></a><figcaption>Cap. 18 · Microfones por dentro</figcaption></figure>
+        <figure><a href="imagens/livro-pagina-3.jpg"><img src="imagens/livro-pagina-3.jpg" width="607" height="910" loading="lazy" alt="Página com a tabela do Kit 2 de home studio, item por item, com total de R$ 17.670"></a><figcaption>Cap. 18 · Kit de estúdio, item por item</figcaption></figure>
+        <figure><a href="imagens/livro-pagina-4.jpg"><img src="imagens/livro-pagina-4.jpg" width="607" height="910" loading="lazy" alt="Página do anexo E, checklist de lançamento de um single"></a><figcaption>Anexo E · Checklist de lançamento</figcaption></figure>
       </div>
-      <a class="gratis" href="arquivos/capitulo-gratis-o-mapa-dos-golpes.pdf" target="_blank" rel="noopener" data-goatcounter-click="capitulo-gratis" data-goatcounter-title="Livro: abriu o capítulo grátis">Leia o capítulo “O mapa dos golpes” inteiro, grátis →</a>
+      <a class="gratis" href="arquivos/capitulo-gratis-o-mapa-dos-golpes.pdf" data-goatcounter-click="capitulo-gratis" data-goatcounter-title="Livro: abriu o capítulo grátis">Leia o capítulo “O mapa dos golpes” inteiro, grátis →</a>
     </div>
   </section>
 
@@ -262,7 +278,7 @@ footer{padding-block:2.5rem 6rem;border-top:1px solid var(--linha);font:400 .82r
       <p class="de">de <s>R$ 47</s> por</p>
       <p class="preco"><small>R$</small>37</p>
       <p class="suave">ou em até 12x no cartão · Pix e boleto · acesso imediato</p>
-      <a class="botao" href="https://pay.kiwify.com.br/meTmpHD" target="_blank" rel="noopener" data-goatcounter-click="kiwify-livro" data-goatcounter-title="Livro: Comprar agora (oferta)">Comprar agora</a>
+      <a class="botao" href="https://pay.kiwify.com.br/meTmpHD" data-goatcounter-click="kiwify-livro" data-goatcounter-title="Livro: Comprar agora (oferta)">Comprar agora</a>
       <p style="font-size:.95rem"><b>Garantia de 7 dias.</b> Se não for para você, peça o reembolso dentro de 7 dias pela própria Kiwify e recebe 100% do valor de volta.</p>
     </div>
   </section>
@@ -271,7 +287,7 @@ footer{padding-block:2.5rem 6rem;border-top:1px solid var(--linha);font:400 .82r
     <p class="rotulo">Perguntas frequentes</p>
     <details><summary>Como recebo o livro?</summary><p>Logo após a confirmação do pagamento, a Kiwify envia o acesso para o seu e-mail. Você baixa o livro (em PDF e em EPUB) e os bônus na área do aluno.</p></details>
     <details><summary>Consigo ler no celular?</summary><p>Sim. Você recebe duas versões: o PDF, com a diagramação do livro, e o EPUB, em que a letra se ajusta ao tamanho da tela do celular, do Kindle ou do Apple Livros. As duas têm sumário clicável.</p></details>
-    <details><summary>Posso ler um trecho antes de comprar?</summary><p>Pode. O capítulo “O mapa dos golpes” está liberado de graça: <a href="arquivos/capitulo-gratis-o-mapa-dos-golpes.pdf" target="_blank" rel="noopener" data-goatcounter-click="capitulo-gratis" data-goatcounter-title="Livro: abriu o capítulo grátis">baixar o capítulo grátis</a>.</p></details>
+    <details><summary>Posso ler um trecho antes de comprar?</summary><p>Pode. O capítulo “O mapa dos golpes” está liberado de graça: <a href="arquivos/capitulo-gratis-o-mapa-dos-golpes.pdf" data-goatcounter-click="capitulo-gratis" data-goatcounter-title="Livro: abriu o capítulo grátis">baixar o capítulo grátis</a>.</p></details>
     <details><summary>Preciso saber teoria musical?</summary><p>Não. O livro explica cada termo técnico quando ele aparece e tem um glossário no final.</p></details>
     <details><summary>Serve para quem toca em igreja, em banda ou é DJ?</summary><p>Sim. Há trechos específicos para músicos de igreja, bandas e DJs, além de quem segue carreira solo.</p></details>
     <details><summary>Os preços vão ficar desatualizados?</summary><p>Os valores são de 2026 e servem como referência de ordem de grandeza. O livro ensina a fazer a conta, e a planilha bônus deixa você atualizar os números.</p></details>
@@ -281,7 +297,7 @@ footer{padding-block:2.5rem 6rem;border-top:1px solid var(--linha);font:400 .82r
 
   <section class="pilha estreita" style="text-align:center;align-items:center">
     <h2>A música é arte. <em>A carreira é conta.</em></h2>
-    <a class="botao" href="#oferta">Quero o livro <small>R$ 37</small></a>
+    <a class="botao" href="https://pay.kiwify.com.br/meTmpHD" data-goatcounter-click="kiwify-livro-final" data-goatcounter-title="Livro: Comprar (fim da página)">Quero o livro <small>R$ 37</small></a>
   </section>
 
   <footer>
@@ -293,12 +309,12 @@ footer{padding-block:2.5rem 6rem;border-top:1px solid var(--linha);font:400 .82r
 
 <div class="barra" id="barra" aria-hidden="true">
   <p>Livro + 5 bônus<br><b>R$ 37</b></p>
-  <a class="botao" href="https://pay.kiwify.com.br/meTmpHD" target="_blank" rel="noopener" tabindex="-1" data-goatcounter-click="kiwify-livro-barra" data-goatcounter-title="Livro: Comprar (barra do celular)">Quero o livro</a>
+  <a class="botao" href="https://pay.kiwify.com.br/meTmpHD" tabindex="-1" data-goatcounter-click="kiwify-livro-barra" data-goatcounter-title="Livro: Comprar (barra do celular)">Quero o livro</a>
 </div>
 <script>
-  // Barra de compra no celular: aparece depois do topo e some quando a oferta está na tela
+  // Barra de compra no celular: aparece quando o botão do topo sai da tela e some quando a oferta está na tela
   (function () {
-    var barra = document.getElementById("barra"), topo = document.querySelector(".abre"), oferta = document.getElementById("oferta");
+    var barra = document.getElementById("barra"), topo = document.querySelector(".abre .compra"), oferta = document.getElementById("oferta");
     if (!barra || !("IntersectionObserver" in window)) return;
     var noTopo = true, naOferta = false;
     function atualiza() { var v = !noTopo && !naOferta; barra.classList.toggle("visivel", v); barra.setAttribute("aria-hidden", v ? "false" : "true"); barra.querySelector("a").tabIndex = v ? 0 : -1; }
