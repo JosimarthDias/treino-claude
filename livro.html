@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://josimarthdias.com.br/livro">
   <link rel="apple-touch-icon" href="imagens/icone.png">
 <style>
-/* Layout: coluna única de leitura; a capa abre, os números reais do livro em "comanda de preços", oferta no fim. Tema escuro único, como a capa. */
+/* Layout: coluna única de leitura; a capa abre, os passos do quarto ao palco, oferta no fim. Tema escuro único, como a capa. */
 :root{
   --noite:#0c1424;      /* fundo, azul-noite da capa */
   --palco:#152036;      /* superfícies */
@@ -77,11 +77,13 @@ a{color:var(--ambar)}
 .botao small{font:600 .8rem/1 var(--dado);letter-spacing:0;text-transform:none}
 .selos{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font:400 .8rem/1.4 var(--dado);color:var(--suave)}
 
-/* comanda de preços: os números do livro */
-.comanda{background:var(--palco);border:1px dashed var(--linha);padding:1.2rem 1.2rem .6rem;font-family:var(--dado);font-size:.9rem}
-.comanda .lin{display:flex;justify-content:space-between;gap:1rem;padding-block:.55rem;border-bottom:1px dotted var(--linha)}
-.comanda .lin:last-child{border-bottom:0}
-.comanda .lin span:last-child{color:var(--ambar);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+/* passos: do quarto ao palco */
+.passos{list-style:none;margin:0;padding:.6rem 1.2rem;background:var(--palco);border:1px dashed var(--linha);counter-reset:s}
+.passos li{display:grid;grid-template-columns:2.2rem minmax(0,1fr);column-gap:.6rem;padding-block:.75rem;border-bottom:1px dotted var(--linha)}
+.passos li:last-child{border-bottom:0}
+.passos li::before{counter-increment:s;content:counter(s,decimal-leading-zero);grid-row:span 2;font:400 1.4rem/1.1 var(--display);color:var(--ambar)}
+.passos b{font-weight:600}
+.passos span{font-size:.92rem;color:var(--suave)}
 
 .lista{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.8rem}
 .lista li{padding-left:1.4rem;position:relative}
@@ -175,19 +177,18 @@ footer{padding-block:2.5rem 6rem;border-top:1px solid var(--linha);font:400 .82r
   </section>
 
   <section class="duas">
-    <div class="cab"><p class="rotulo">Números que estão no livro</p>
-    <h2>Sem achismo. <em>Com preço.</em></h2></div>
+    <div class="cab"><p class="rotulo">Do quarto ao palco</p>
+    <h2>Você não precisa <em>começar grande.</em></h2></div>
     <div class="corpo">
-    <p>Cada equipamento discriminado, item por item, com faixa de preço pesquisada no mercado brasileiro em 2026.</p>
-    <div class="comanda" role="list">
-      <div class="lin" role="listitem"><span>Kit básico de estúdio em casa</span><span>R$ 4.110</span></div>
-      <div class="lin" role="listitem"><span>Kit intermediário de estúdio</span><span>R$ 17.670</span></div>
-      <div class="lin" role="listitem"><span>Single produzido, versão econômica</span><span>R$ 1.760</span></div>
-      <div class="lin" role="listitem"><span>Single produzido, versão profissional</span><span>R$ 22.400</span></div>
-      <div class="lin" role="listitem"><span>Videoclipe econômico</span><span>R$ 2.000</span></div>
-      <div class="lin" role="listitem"><span>Fatia do streaming paga aos artistas no Brasil</span><span>87%</span></div>
-    </div>
-    <p class="suave" style="font-size:.9rem">E o livro mostra a conta para você refazer com os seus números.</p>
+    <p>O livro começa do zero: mostra o que fazer primeiro, onde não gastar à toa e como crescer um passo de cada vez, no seu ritmo.</p>
+    <ol class="passos">
+      <li><b>Comece com o que você tem</b><span>o que aprender primeiro e onde estudar, mesmo sem dinheiro</span></li>
+      <li><b>Monte o básico sem desperdício</b><span>o que comprar primeiro e o que pode esperar</span></li>
+      <li><b>Cobre com segurança</b><span>como chegar ao valor do seu show sem espantar o contratante</span></li>
+      <li><b>Lance a sua música</b><span>gravação, distribuição e divulgação nas plataformas</span></li>
+      <li><b>Proteja o seu trabalho</b><span>contratos, direitos autorais e os golpes mais comuns</span></li>
+    </ol>
+    <p class="suave" style="font-size:.9rem">E, no fim, um plano para os seus primeiros 90 dias.</p>
     </div>
   </section>
 
@@ -217,7 +218,7 @@ footer{padding-block:2.5rem 6rem;border-top:1px solid var(--linha);font:400 .82r
   <section class="duas">
     <div class="cab"><p class="rotulo">Por dentro</p>
     <h2>Veja as <em>páginas</em></h2>
-    <p class="suave">Tabelas com preço, ilustrações que explicam o equipamento e checklists para marcar.</p></div>
+    <p class="suave">Tabelas, ilustrações que explicam o equipamento e checklists para marcar.</p></div>
     <div class="corpo">
       <div class="paginas">
         <figure><a href="imagens/livro-pagina-1.jpg"><img src="imagens/livro-pagina-1.jpg" width="607" height="910" loading="lazy" alt="Página de abertura do capítulo 30, Quanto cobrar, com a tabela de cachês de referência"></a><figcaption>Cap. 30 · Quanto cobrar</figcaption></figure>
