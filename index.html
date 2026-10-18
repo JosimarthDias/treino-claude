@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Josimarth Dias · Cantor e Compositor | A Mensagem</title>
-  <meta name="description" content="Josimarth Dias, cantor e compositor de Brasília. Gospel e canções românticas em Indie Folk, Baladas, MPB e Acústico. Convites e ficha técnica.">
+  <title>Josimarth Dias · Cantor gospel em Brasília | A Mensagem</title>
+  <meta name="description" content="Josimarth Dias, cantor gospel, compositor e violonista de Brasília. Louvor ao vivo para cultos, congressos, casamentos e eventos. Ouça as músicas e peça seu orçamento.">
 
   <!-- Prévia ao compartilhar o link (WhatsApp, Instagram, Facebook etc.) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Josimarth Dias">
-  <meta property="og:title" content="Josimarth Dias · Cantor e Compositor | A Mensagem">
-  <meta property="og:description" content="Cantor, compositor e violonista. Músicas de fé, esperança e amor entre o Gospel e canções românticas de Indie Folk, Baladas, MPB e Acústico.">
+  <meta property="og:title" content="Josimarth Dias · Cantor gospel em Brasília | A Mensagem">
+  <meta property="og:description" content="Cantor gospel, compositor e violonista de Brasília. Louvor ao vivo para igrejas, casamentos e eventos, e os livros Doce Som e Do Quarto ao Palco.">
   <meta property="og:url" content="https://josimarthdias.com.br/">
   <meta property="og:image" content="https://josimarthdias.com.br/imagens/compartilhar.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Josimarth Dias com seu violão">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#0f172a">
+  <meta name="theme-color" content="#14243a">
   <link rel="canonical" href="https://josimarthdias.com.br/">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><rect x='6' y='6' width='88' height='88' rx='18' fill='none' stroke='%233b82f6' stroke-width='5'/><text x='50' y='66' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-weight='800' font-size='46' fill='%23e2e8f0'>JD</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2314243a'/><rect x='6' y='6' width='88' height='88' rx='18' fill='none' stroke='%23e9b25a' stroke-width='5'/><text x='50' y='66' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-weight='800' font-size='46' fill='%23f7ecd8'>JD</text></svg>">
   <link rel="apple-touch-icon" href="imagens/icone.png">
 
   <!-- Informações para o Google entender que o site é de um artista -->
@@ -30,7 +30,7 @@
     "@type": "Person",
     "name": "Josimarth Dias",
     "jobTitle": "Cantor, compositor e violonista",
-    "description": "Cantor, compositor e violonista do projeto A Mensagem, com músicas que unem o Gospel e canções românticas em ritmos como Indie Folk, Baladas, MPB e Acústico.",
+    "description": "Cantor gospel, compositor e violonista de Brasília, à frente do projeto A Mensagem: louvor ao vivo para igrejas, casamentos e eventos.",
     "url": "https://josimarthdias.com.br/",
     "email": "contato@josimarthdias.com.br",
     "image": "https://josimarthdias.com.br/imagens/josimarth-dias-foto.jpg",
@@ -46,7 +46,8 @@
       "https://www.tiktok.com/@josimarthdias",
       "https://music.apple.com/br/artist/josimarth-dias/898976981",
       "https://music.amazon.com.br/artists/B09Q3SB147",
-      "https://music.youtube.com/channel/UC9mq0rFrnyPaPFfMTBwz4KQ"
+      "https://music.youtube.com/channel/UC9mq0rFrnyPaPFfMTBwz4KQ",
+      "https://link.deezer.com/s/34z7qD0jLgjcdHvs58M2z"
     ]
   }
   </script>
@@ -57,15 +58,17 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"></noscript>
   <style>
     :root {
-      --fundo: #0f172a;
-      --cartao: #1e293b;
-      --borda: #334155;
-      --texto: #e2e8f0;
-      --texto-suave: #94a3b8;
-      --azul: #3b82f6;
-      --azul-escuro: #2563eb;
-      --azul-claro: #60a5fa;
-      --azul-mais-escuro: #1d4ed8;
+      /* Azul-noite e dourado, as cores dos livros Doce Som e da marca */
+      --fundo: #14243a;
+      --cartao: #1b2e48;
+      --borda: #2c4161;
+      --texto: #f3ede3;
+      --texto-suave: #b4bccb;
+      --destaque: #e9b25a;
+      --destaque-forte: #e9b25a;
+      --destaque-claro: #f2c97d;
+      --destaque-hover: #f2c97d;
+      --texto-no-destaque: #14243a;
     }
 
     * {
@@ -93,7 +96,7 @@
     }
 
     a {
-      color: var(--azul-claro);
+      color: var(--destaque-claro);
     }
 
     .container {
@@ -108,7 +111,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(20, 36, 58, 0.92);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--borda);
     }
@@ -145,7 +148,7 @@
 
     .menu nav a:hover,
     .menu nav a:focus-visible {
-      color: var(--azul);
+      color: var(--destaque);
     }
 
     /* Destaque (primeira tela) */
@@ -156,7 +159,7 @@
       min-height: min(88vh, 760px);
       padding: 96px 0 80px;
       overflow: hidden;
-      background: radial-gradient(ellipse at top left, rgba(59, 130, 246, 0.25), transparent 60%);
+      background: radial-gradient(ellipse at top left, rgba(233, 178, 90, 0.16), transparent 60%);
     }
 
     .destaque-foto {
@@ -188,7 +191,7 @@
 
     .destaque .rotulo {
       margin: 0 0 12px;
-      color: var(--azul-claro);
+      color: var(--destaque-claro);
       font-weight: 600;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -218,7 +221,7 @@
       padding: 10px 18px 10px 10px;
       border: 1px solid rgba(245, 184, 46, 0.55);
       border-radius: 14px;
-      background: rgba(15, 23, 42, 0.78);
+      background: rgba(20, 36, 58, 0.78);
       color: var(--texto);
       text-decoration: none;
       transition: border-color 0.2s, transform 0.2s;
@@ -288,10 +291,10 @@
       gap: 8px;
       padding: 12px 28px;
       white-space: nowrap;
-      border: 2px solid var(--azul-escuro);
+      border: 2px solid var(--destaque-forte);
       border-radius: 999px;
-      background: var(--azul-escuro);
-      color: #ffffff;
+      background: var(--destaque-forte);
+      color: var(--texto-no-destaque);
       font-weight: 600;
       text-decoration: none;
       transition: background 0.2s, color 0.2s, transform 0.2s;
@@ -312,22 +315,22 @@
 
     .botao:hover,
     .botao:focus-visible {
-      background: var(--azul-mais-escuro);
-      border-color: var(--azul-mais-escuro);
+      background: var(--destaque-hover);
+      border-color: var(--destaque-hover);
       transform: translateY(-2px);
     }
 
     .botao-contorno {
-      border-color: var(--azul);
+      border-color: var(--destaque);
       background: transparent;
-      color: var(--azul-claro);
+      color: var(--destaque-claro);
     }
 
     .botao-contorno:hover,
     .botao-contorno:focus-visible {
-      background: var(--azul-escuro);
-      border-color: var(--azul-escuro);
-      color: #ffffff;
+      background: var(--destaque-forte);
+      border-color: var(--destaque-forte);
+      color: var(--texto-no-destaque);
     }
 
     .botao-whatsapp {
@@ -376,7 +379,7 @@
       height: 4px;
       margin-top: 12px;
       border-radius: 2px;
-      background: var(--azul);
+      background: var(--destaque);
     }
 
     /* Sobre */
@@ -391,13 +394,13 @@
       width: 240px;
       height: 240px;
       border-radius: 50%;
-      border: 4px solid var(--azul);
+      border: 4px solid var(--destaque);
       background: var(--cartao);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      color: var(--azul);
+      color: var(--destaque);
       font-size: 4rem;
       font-weight: 800;
     }
@@ -489,7 +492,7 @@
       height: 76px;
       margin: -38px 0 0 -38px;
       border-radius: 50%;
-      background: var(--azul);
+      background: var(--destaque);
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
     }
 
@@ -501,7 +504,7 @@
       transform: translate(-50%, -50%);
       border-style: solid;
       border-width: 14px 0 14px 24px;
-      border-color: transparent transparent transparent #ffffff;
+      border-color: transparent transparent transparent var(--texto-no-destaque);
     }
 
     .ao-vivo-texto {
@@ -619,13 +622,13 @@
 
     .faixas a:hover,
     .faixas a:focus-visible {
-      border-color: var(--azul);
+      border-color: var(--destaque);
       transform: translateY(-2px);
     }
 
     .faixas a::before {
       content: "♪ ";
-      color: var(--azul-claro);
+      color: var(--destaque-claro);
     }
 
     .faixas .genero {
@@ -698,12 +701,12 @@
     /* Convite (chamada para ação) */
     .convite {
       text-align: center;
-      background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.22), transparent 70%);
+      background: radial-gradient(ellipse at center, rgba(233, 178, 90, 0.14), transparent 70%);
     }
 
     .convite .rotulo {
       margin: 0 auto 12px;
-      color: var(--azul-claro);
+      color: var(--destaque-claro);
       font-weight: 600;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -751,7 +754,7 @@
 
     .tipos-evento li::before {
       content: "♪ ";
-      color: var(--azul-claro);
+      color: var(--destaque-claro);
     }
 
     /* Pedido de orçamento */
@@ -760,7 +763,7 @@
       margin: 32px auto 0;
       padding: 32px;
       border-radius: 16px;
-      border-top: 4px solid var(--azul);
+      border-top: 4px solid var(--destaque);
       background: var(--cartao);
       text-align: left;
     }
@@ -812,9 +815,9 @@
     .campo input:focus,
     .campo select:focus,
     .campo textarea:focus {
-      outline: 2px solid var(--azul);
+      outline: 2px solid var(--destaque);
       outline-offset: 1px;
-      border-color: var(--azul);
+      border-color: var(--destaque);
     }
 
     .campo [aria-invalid="true"] {
@@ -836,7 +839,15 @@
       font-size: 0.95rem;
     }
 
-    /* Para contratantes */
+    /* Para contratantes (dentro da seção de convites) */
+    .contratantes-titulo {
+      margin: 56px 0 20px;
+      font-size: 1.4rem;
+    }
+
+    .convite .kit {
+      text-align: left;
+    }
     .kit {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -888,7 +899,7 @@
     .cartao {
       padding: 32px;
       border-radius: 16px;
-      border-top: 4px solid var(--azul);
+      border-top: 4px solid var(--destaque);
       background: var(--cartao);
       text-align: center;
     }
@@ -935,8 +946,8 @@
     .redes a:focus-visible,
     .topo:hover,
     .topo:focus-visible {
-      color: var(--azul);
-      border-color: var(--azul);
+      color: var(--destaque);
+      border-color: var(--destaque);
     }
 
     .topo {
@@ -983,6 +994,17 @@
     }
 
     /* Tablet e celular: a foto do topo fica em cima e o texto embaixo, sem sobrepor o rosto */
+    .cartilha-grade + .cartilha-grade {
+      margin-top: 56px;
+    }
+    .livro-sub {
+      margin: -6px 0 12px;
+      color: var(--destaque-claro);
+      font-weight: 600;
+    }
+    .plataformas {
+      margin-top: 16px;
+    }
     .cartilha-grade {
       display: grid;
       grid-template-columns: minmax(200px, 300px) 1fr;
@@ -1014,9 +1036,9 @@
     }
     .cartilha-pilares li {
       padding: 6px 14px;
-      border: 1px solid var(--azul);
+      border: 1px solid var(--destaque);
       border-radius: 999px;
-      color: var(--azul-claro);
+      color: var(--destaque-claro);
       font-weight: 600;
       font-size: 0.85rem;
       letter-spacing: 0.04em;
@@ -1191,12 +1213,10 @@
     <div class="container">
       <a class="marca" href="#inicio">Josimarth Dias</a>
       <nav aria-label="Menu principal">
-        <a href="#sobre">Sobre</a>
+        <a class="so-telas-grandes" href="#sobre">Sobre</a>
         <a href="#musica">Músicas</a>
-        <a class="so-telas-grandes" href="#convite">Convites</a>
-        <a href="#contratantes">Contratantes</a>
-        <a class="so-telas-grandes" href="#livro">Livro</a>
-        <a class="so-telas-grandes" href="#devocional">Devocional</a>
+        <a href="#convite">Contratar</a>
+        <a href="#livros">Livros</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
@@ -1209,7 +1229,7 @@
         <div class="conteudo">
           <p class="rotulo">Cantor · Compositor · Violonista</p>
           <h1>Josimarth Dias</h1>
-          <p class="frase">Projeto "A Mensagem": canções de fé, esperança e transformação, entre o Gospel e músicas românticas em ritmos como Indie Folk, Baladas, MPB e Acústico.</p>
+          <p class="frase">Projeto "A Mensagem": canções de fé, esperança e transformação. Louvor ao vivo, com voz e violão, para igrejas, casamentos e eventos.</p>
           <div class="botoes">
             <a class="botao" href="#musica">Ouvir agora</a>
             <a class="botao botao-contorno" href="#convite">Convidar para ministrar</a>
@@ -1243,9 +1263,9 @@
         </div>
         <div>
           <h2>Sobre</h2>
-          <p>Josimarth Dias é um cantor, compositor e violonista que dedica sua arte ao projeto "A Mensagem". Com uma musicalidade que transita entre o Gospel e músicas românticas em ritmos como Indie Folk, Baladas, MPB e Acústico, Josimarth utiliza sua voz e as cordas do seu violão para levar palavras de fé, esperança e transformação aos seus ouvintes.</p>
-          <p>Atualmente baseado em Brasília, o artista vem consolidando sua carreira com composições autorais marcantes, como "A Mensagem", "Não Temerei" e "Tentando Te Encontrar", entre outras. Suas letras são reflexos de uma sensibilidade aguçada e um compromisso profundo em edificar vidas através do louvor.</p>
-          <p>Mais do que música, cada lançamento é um convite para uma experiência de conexão espiritual e paz. Explore sua discografia e <span class="sem-quebra">deixe-se</span> envolver pela mensagem.</p>
+          <p>Josimarth Dias é cantor, compositor e violonista de Brasília. À frente do projeto "A Mensagem", leva louvor ao vivo, com voz e violão, a cultos, congressos, casamentos e eventos.</p>
+          <p>Em 2000, escreveu "O Valor da Vida", canção que ganhou o primeiro lugar no festival de música de um congresso de adolescentes. Hoje são mais de 50 canções autorais, como "A Mensagem", "Não Temerei" e "Tentando Te Encontrar", que vão do louvor acústico ao pop rock e às baladas.</p>
+          <p>Também é autor de dois livros: o devocional <a href="doce-som">Doce Som</a>, com 365 dias inspirados nas suas canções, e <a href="livro">Do Quarto ao Palco</a>, para quem quer viver de música.</p>
         </div>
       </div>
     </section>
@@ -1283,11 +1303,13 @@
         <p class="disponivel">Siga Josimarth na sua plataforma preferida e receba cada lançamento em primeira mão.</p>
         <div class="botoes">
           <a class="botao botao-spotify" href="https://open.spotify.com/artist/7JbbaZAEvO36RrxdyiMwqp" target="_blank" rel="noopener noreferrer" data-goatcounter-click="spotify" data-goatcounter-title="Spotify (seção Músicas)"><svg class="icone" aria-hidden="true"><use href="#i-spotify"/></svg>Spotify</a>
-          <a class="botao botao-contorno" href="https://music.apple.com/br/artist/josimarth-dias/898976981" target="_blank" rel="noopener noreferrer" data-goatcounter-click="apple-music" data-goatcounter-title="Apple Music (seção Músicas)"><svg class="icone" aria-hidden="true"><use href="#i-applemusic"/></svg>Apple Music</a>
-          <a class="botao botao-contorno" href="https://music.amazon.com.br/artists/B09Q3SB147" target="_blank" rel="noopener noreferrer" data-goatcounter-click="amazon-music" data-goatcounter-title="Amazon Music (seção Músicas)"><svg class="icone" aria-hidden="true"><use href="#i-amazon"/></svg>Amazon Music</a>
-          <a class="botao botao-contorno" href="https://music.youtube.com/channel/UC9mq0rFrnyPaPFfMTBwz4KQ" target="_blank" rel="noopener noreferrer" data-goatcounter-click="youtube-music" data-goatcounter-title="YouTube Music (seção Músicas)"><svg class="icone" aria-hidden="true"><use href="#i-youtubemusic"/></svg>YouTube Music</a>
-          <a class="botao botao-contorno" href="https://link.deezer.com/s/34z7qD0jLgjcdHvs58M2z" target="_blank" rel="noopener noreferrer" data-goatcounter-click="deezer" data-goatcounter-title="Deezer (seção Músicas)"><svg class="icone" aria-hidden="true"><use href="#i-deezer"/></svg>Deezer</a>
         </div>
+        <nav class="redes plataformas" aria-label="Outras plataformas">
+          <a href="https://music.apple.com/br/artist/josimarth-dias/898976981" target="_blank" rel="noopener noreferrer" aria-label="Apple Music" data-goatcounter-click="apple-music" data-goatcounter-title="Apple Music (seção Músicas)"><svg class="icone" aria-hidden="true"><use href="#i-applemusic"/></svg></a>
+          <a href="https://music.amazon.com.br/artists/B09Q3SB147" target="_blank" rel="noopener noreferrer" aria-label="Amazon Music" data-goatcounter-click="amazon-music" data-goatcounter-title="Amazon Music (seção Músicas)"><svg class="icone" aria-hidden="true"><use href="#i-amazon"/></svg></a>
+          <a href="https://music.youtube.com/channel/UC9mq0rFrnyPaPFfMTBwz4KQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube Music" data-goatcounter-click="youtube-music" data-goatcounter-title="YouTube Music (seção Músicas)"><svg class="icone" aria-hidden="true"><use href="#i-youtubemusic"/></svg></a>
+          <a href="https://link.deezer.com/s/34z7qD0jLgjcdHvs58M2z" target="_blank" rel="noopener noreferrer" aria-label="Deezer" data-goatcounter-click="deezer" data-goatcounter-title="Deezer (seção Músicas)"><svg class="icone" aria-hidden="true"><use href="#i-deezer"/></svg></a>
+        </nav>
       </div>
     </section>
 
@@ -1329,15 +1351,9 @@
         <h2>Leve "A Mensagem" para sua igreja ou evento</h2>
         <p>Louvor ao vivo com voz e violão para cultos, congressos, casamentos e eventos.</p>
         <ul class="tipos-evento" aria-label="Tipos de evento">
-          <li>Cultos</li>
-          <li>Congressos</li>
-          <li>Encontros de casais</li>
-          <li>Retiros espirituais</li>
-          <li>Retiros de Carnaval</li>
-          <li>Casamentos</li>
-          <li>Bodas de casamento</li>
-          <li>Aniversários</li>
-          <li>Aniversários de 15 anos</li>
+          <li>Cultos e congressos</li>
+          <li>Retiros e encontros</li>
+          <li>Casamentos e celebrações</li>
           <li>Eventos corporativos</li>
         </ul>
         <form class="orcamento" id="orcamento" novalidate>
@@ -1405,16 +1421,11 @@
           <p class="orcamento-erro" role="alert" hidden>Preencha os campos nome, tipo de evento, data e cidade para continuar.</p>
           <button class="botao botao-whatsapp" type="submit"><svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Enviar pelo WhatsApp</button>
         </form>
-      </div>
-    </section>
-
-    <section id="contratantes">
-      <div class="container">
-        <h2>Para contratantes</h2>
+        <h3 class="contratantes-titulo" id="contratantes">Material para contratantes</h3>
         <div class="kit">
           <div class="kit-item">
             <h3>Release</h3>
-            <p>Josimarth Dias é cantor, compositor e violonista de Brasília. À frente do projeto "A Mensagem", une o Gospel a canções românticas em ritmos como Indie Folk, Baladas, MPB e Acústico, levando fé, esperança e transformação por meio da voz e do violão.</p>
+            <p>Josimarth Dias é cantor, compositor e violonista de Brasília. À frente do projeto "A Mensagem", leva louvor ao vivo, com voz e violão, a igrejas, congressos, casamentos e eventos, com mais de 50 canções autorais de fé, esperança e transformação.</p>
           </div>
           <div class="kit-item">
             <h3>Fotos e artes para divulgação</h3>
@@ -1429,19 +1440,38 @@
             <a class="botao botao-contorno" href="arquivos/ficha-tecnica-josimarth-dias.pdf" download data-goatcounter-click="ficha-tecnica-pdf" data-goatcounter-title="Baixou a ficha técnica">Baixar ficha técnica (PDF)</a>
           </div>
         </div>
-        <div class="botoes">
-          <a class="botao botao-contorno" href="mailto:contato@josimarthdias.com.br?subject=Convite%20para%20evento" data-goatcounter-click="email-contratantes" data-goatcounter-title="E-mail (Contratantes)"><svg class="icone" aria-hidden="true"><use href="#i-email"/></svg>Enviar e-mail</a>
-        </div>
       </div>
     </section>
 
-    <section id="livro">
+
+    <section id="livros">
       <div class="container">
-        <h2>Livro: Do Quarto ao Palco</h2>
-        <div class="cartilha-grade">
+        <h2>Livros</h2>
+        <div class="cartilha-grade" id="devocional">
+          <a href="doce-som"><img class="cartilha-capa" src="imagens/doce-som-capa.jpg" alt="Capa do livro Doce Som, de Josimarth Dias: um sol nascendo sobre a água" width="600" height="850" loading="lazy"></a>
+          <div class="cartilha-texto">
+            <h3>Doce Som</h3>
+            <p class="livro-sub">365 dias com Deus através da música</p>
+            <p>Um devocional para o ano inteiro, nascido das canções do projeto A Mensagem. Em cada dia:</p>
+            <ul class="cartilha-itens">
+              <li>Um trecho de uma das 51 canções, para guardar no coração</li>
+              <li>Uma reflexão que vai da canção à Bíblia, com o contexto da passagem</li>
+              <li>Uma oração curta e uma leitura bíblica para o dia</li>
+              <li>Um plano para ler a Bíblia inteira em um ano, dia a dia</li>
+              <li>Palavras para datas especiais, como Páscoa, Dia das Mães e Natal</li>
+              <li>Calendário clicável no celular e links para ouvir as canções</li>
+            </ul>
+            <div class="botoes">
+              <a class="botao botao-contorno" href="doce-som" data-goatcounter-click="site-doce-som" data-goatcounter-title="Doce Som: botão Conhecer o livro">Conhecer o livro</a>
+              <a class="botao" href="https://pay.kiwify.com.br/Q4MUVGq" data-goatcounter-click="kiwify-doce-som-inicio" data-goatcounter-title="Doce Som: Comprar (página inicial)">Comprar por R$ 9,99</a>
+            </div>
+          </div>
+        </div>
+        <div class="cartilha-grade" id="livro">
           <a href="livro"><img class="cartilha-capa" src="imagens/livro-capa.jpg" alt="Capa do livro Do Quarto ao Palco, de Josimarth Dias" width="525" height="840" loading="lazy"></a>
           <div class="cartilha-texto">
-            <h3>Como transformar sua música em profissão</h3>
+            <h3>Do Quarto ao Palco</h3>
+            <p class="livro-sub">Como transformar sua música em profissão</p>
             <p>Livro digital com 49 capítulos e 5 bônus. Mostra, com números reais, como transformar música em profissão no Brasil:</p>
             <ul class="cartilha-itens">
               <li>Equipamentos item por item, com preço, para shows e para gravar em casa</li>
@@ -1458,32 +1488,6 @@
         </div>
       </div>
     </section>
-
-    <section id="devocional">
-      <div class="container">
-        <h2>Devocional: Doce Som</h2>
-        <div class="cartilha-grade">
-          <a href="doce-som"><img class="cartilha-capa" src="imagens/doce-som-capa.jpg" alt="Capa do livro Doce Som, de Josimarth Dias: um sol nascendo sobre a água" width="600" height="850" loading="lazy"></a>
-          <div class="cartilha-texto">
-            <h3>365 dias com Deus através da música</h3>
-            <p>Um devocional para o ano inteiro, nascido das canções do projeto A Mensagem. Em cada dia:</p>
-            <ul class="cartilha-itens">
-              <li>Um trecho de uma das 51 canções, para guardar no coração</li>
-              <li>Uma reflexão que vai da canção à Bíblia, com o contexto da passagem</li>
-              <li>Uma oração curta e uma leitura bíblica para o dia</li>
-              <li>Um plano para ler a Bíblia inteira em um ano, dia a dia</li>
-              <li>Palavras para datas especiais, como Páscoa, Dia das Mães e Natal</li>
-              <li>Calendário clicável no celular e links para ouvir as canções</li>
-            </ul>
-            <div class="botoes">
-              <a class="botao botao-contorno" href="doce-som" data-goatcounter-click="site-doce-som" data-goatcounter-title="Doce Som: botão Conhecer o livro">Conhecer o livro</a>
-              <a class="botao" href="https://pay.kiwify.com.br/Q4MUVGq" data-goatcounter-click="kiwify-doce-som-inicio" data-goatcounter-title="Doce Som: Comprar (página inicial)">Comprar por R$ 9,99</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="contato">
       <div class="container">
         <h2>Contato</h2>
