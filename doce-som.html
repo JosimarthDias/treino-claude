@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doce Som · Devocional de Josimarth Dias</title>
+<meta name="description" content="Devocional de 365 dias a partir das canções de Josimarth Dias: um trecho da canção, uma reflexão bíblica, uma oração e uma leitura para cada dia. Livro digital por R$ 9,99.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Jost:wght@500;600&display=swap">
+  <meta property="og:type" content="book">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Josimarth Dias">
+  <meta property="og:title" content="Doce Som: 365 dias com Deus através da música">
+  <meta property="og:description" content="Um devocional para o ano inteiro, a partir das canções de Josimarth Dias. Livro digital por R$ 9,99.">
+  <meta property="og:url" content="https://josimarthdias.com.br/doce-som">
+  <meta property="og:image" content="https://josimarthdias.com.br/imagens/doce-som-compartilhar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#14243a">
+  <link rel="canonical" href="https://josimarthdias.com.br/doce-som">
+  <link rel="apple-touch-icon" href="imagens/icone.png">
+<style>
+/* Layout: coluna única de leitura, como a página do livro Música Dá Dinheiro; cores e letras da capa "Amanhecer". */
+:root{
+  --noite:#14243a;      /* fundo, azul da capa */
+  --palco:#1b2e48;      /* superfícies */
+  --linha:#2c4161;      /* divisórias */
+  --ouro:#e9b25a;       /* destaque, o sol da capa */
+  --creme:#f7ecd8;      /* texto corrido */
+  --suave:#b4bccb;      /* texto secundário */
+  --tinta:#14243a;      /* texto sobre o dourado */
+  --display:"Cormorant Garamond",Georgia,serif;
+  --corpo:"Literata",Georgia,"Times New Roman",serif;
+  --dado:"Jost","Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--noite);color:var(--creme);font:400 1.06rem/1.65 var(--corpo);margin:0}
+.wrap{max-width:44rem;margin:0 auto;padding-inline:20px}
+section{padding-block:3.2rem;border-top:1px solid var(--linha)}
+h1,h2{font-family:var(--display);font-weight:600;line-height:1.05;text-wrap:balance;margin:0}
+h2{font-size:clamp(2rem,6.5vw,2.8rem)}
+h2 em{font-style:italic;font-weight:500;color:var(--ouro)}
+h3{font:600 1.1rem/1.3 var(--corpo);margin:0}
+p{margin:0}
+.pilha{display:flex;flex-direction:column;gap:1rem}
+.rotulo{font:600 .74rem/1 var(--dado);letter-spacing:.16em;text-transform:uppercase;color:var(--ouro)}
+.suave{color:var(--suave)}
+a{color:var(--ouro)}
+:focus-visible{outline:3px solid var(--ouro);outline-offset:3px}
+
+/* abertura: no celular, capa pequena ao lado do título e compra já na primeira tela */
+.abre{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,15rem);grid-template-areas:". capa" "titulo capa" "sub capa" "compra capa" "selos capa" "texto capa" ". capa";grid-template-rows:1fr repeat(5,auto) 1fr;column-gap:2rem;row-gap:1rem;align-items:center;padding-block:2.6rem 3rem}
+.abre .titulo{grid-area:titulo;display:flex;flex-direction:column;gap:.8rem}
+.abre h1{font-size:clamp(3rem,10vw,5rem)}
+.abre .sub{grid-area:sub;font:italic 500 1.45rem/1.3 var(--display);color:#f2d9ae}
+.abre .compra{grid-area:compra;display:flex;flex-direction:column;align-items:flex-start;gap:.7rem}
+.abre .selos{grid-area:selos}
+.abre .texto{grid-area:texto}
+.precotopo{font:500 .9rem/1.4 var(--dado);color:var(--suave)}
+.precotopo b{font:600 1.9rem/1 var(--display);color:var(--ouro);margin-inline:.15rem}
+.capa{grid-area:capa;width:100%;height:auto;max-width:15rem;aspect-ratio:600/850;border-radius:4px;box-shadow:0 30px 60px -20px #000,0 0 0 1px var(--linha);transform:rotate(2deg)}
+@media (max-width:620px){
+  .abre{grid-template-columns:5.5rem minmax(0,1fr);grid-template-areas:"capa titulo" "sub sub" "compra compra" "selos selos" "texto texto";grid-template-rows:none;column-gap:1rem;padding-block:1.2rem 2.4rem}
+  .abre h1{font-size:2.8rem}
+  .abre .sub{font-size:1.25rem}
+  .capa{max-width:5.5rem;transform:none;box-shadow:0 12px 24px -10px #000,0 0 0 1px var(--linha)}
+  .abre .compra{align-items:stretch}
+}
+
+.botao{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--ouro);color:var(--tinta);text-decoration:none;font:600 1.05rem/1 var(--dado);letter-spacing:.06em;text-transform:uppercase;padding:1.05rem 1.6rem;border-radius:3px;transition:transform .15s}
+.botao:hover{transform:translateY(-2px)}
+.botao-contorno{background:transparent;color:var(--ouro);border:1px solid var(--ouro);font-size:.92rem;padding:.85rem 1.3rem}
+.botao small{font:600 .8rem/1 var(--dado);letter-spacing:0;text-transform:none}
+.selos{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font:500 .82rem/1.4 var(--dado);color:var(--suave)}
+
+/* como é cada dia */
+.passos{list-style:none;margin:0;padding:.6rem 1.2rem;background:var(--palco);border:1px dashed var(--linha);counter-reset:s}
+.passos li{display:grid;grid-template-columns:2.2rem minmax(0,1fr);column-gap:.6rem;padding-block:.75rem;border-bottom:1px dotted var(--linha)}
+.passos li:last-child{border-bottom:0}
+.passos li::before{counter-increment:s;content:counter(s);grid-row:span 2;font:600 1.6rem/1.1 var(--display);color:var(--ouro)}
+.passos b{font-weight:600}
+.passos span{font-size:.92rem;color:var(--suave)}
+
+.lista{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.8rem}
+.lista li{padding-left:1.4rem;position:relative}
+.lista li::before{content:"";position:absolute;left:0;top:.62em;width:.6rem;height:2px;background:var(--ouro)}
+
+.cena{border-left:3px solid var(--ouro);padding-left:1.1rem;font:italic 500 1.35rem/1.4 var(--display);color:#f2d9ae}
+
+.recursos{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.recursos article{border:1px solid var(--linha);padding:1.1rem;display:flex;flex-direction:column;gap:.45rem}
+.recursos .tipo{font:600 .7rem/1 var(--dado);letter-spacing:.12em;text-transform:uppercase;color:var(--ouro)}
+.recursos p{font-size:.95rem;color:var(--suave)}
+
+.oferta{background:var(--palco);border:1px solid var(--ouro);padding:1.8rem 1.4rem;text-align:center;display:flex;flex-direction:column;gap:1rem;align-items:center}
+.preco{font:600 clamp(3.6rem,14vw,5.4rem)/1 var(--display);color:var(--ouro)}
+.preco small{font-size:.35em;vertical-align:.9em;margin-right:.15em}
+
+details{border-bottom:1px solid var(--linha);padding-block:.9rem}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::after{content:"+";font-family:var(--dado);color:var(--ouro)}
+details[open] summary::after{content:"−"}
+details p{margin-top:.6rem;color:var(--suave)}
+
+/* duas colunas no computador: título à esquerda, conteúdo à direita */
+.duas{display:flex;flex-direction:column;gap:1rem}
+.cab,.corpo{display:flex;flex-direction:column;gap:1rem;min-width:0}
+.estreita{max-width:44rem;margin-inline:auto;width:100%}
+@media (min-width:960px){
+  .wrap{max-width:68rem}
+  .abre{grid-template-columns:minmax(0,1fr) minmax(0,19rem);column-gap:4rem;padding-block:4rem}
+  .capa{max-width:19rem}
+  .duas{display:grid;grid-template-columns:17rem minmax(0,1fr);column-gap:3.5rem;align-items:start}
+  .duas .cab{position:sticky;top:2rem}
+  .recursos{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+/* páginas por dentro do livro */
+.paginas{display:grid;grid-auto-flow:column;grid-auto-columns:72%;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.6rem}
+.paginas figure{margin:0;scroll-snap-align:start;display:flex;flex-direction:column;gap:.5rem}
+.paginas img{width:100%;height:auto;border-radius:3px;box-shadow:0 12px 30px -12px #000;background:#fff}
+.paginas figcaption{font:500 .8rem/1.4 var(--dado);color:var(--suave)}
+@media (min-width:960px){.paginas{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}}
+/* autor */
+.autor{display:flex;gap:1.2rem;align-items:center}
+.autor img{width:6.5rem;height:6.5rem;border-radius:50%;object-fit:cover;border:2px solid var(--ouro);flex-shrink:0}
+.gratis{font:600 .92rem/1.4 var(--dado);color:var(--ouro)}
+/* barra de compra fixa no celular */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 16px calc(.7rem + env(safe-area-inset-bottom,0px));background:var(--palco);border-top:1px solid var(--ouro);transform:translateY(110%);transition:transform .25s}
+.barra.visivel{transform:none}
+.barra p{margin:0;font:500 .85rem/1.3 var(--dado);color:var(--suave)}
+.barra b{color:var(--ouro);font-size:1.1rem}
+.barra .botao{padding:.8rem 1.1rem;font-size:.95rem}
+@media (min-width:960px){.barra{display:none}}
+footer{padding-block:2.5rem 6rem;border-top:1px solid var(--linha);font:500 .82rem/1.6 var(--dado);color:var(--suave)}
+@media (prefers-reduced-motion:reduce){.botao,.barra{transition:none}.capa{transform:none}}
+</style>
+
+</head>
+<body>
+<main class="wrap">
+  <header class="abre">
+    <div class="titulo">
+      <p class="rotulo">Devocional · Livro digital</p>
+      <h1>Doce Som</h1>
+    </div>
+    <img class="capa" src="imagens/doce-som-capa.jpg" width="600" height="850" alt="Capa do livro Doce Som: um sol nascendo sobre a água, com as ondas desenhadas como as linhas de uma pauta musical">
+    <p class="sub">365 dias com Deus através da música</p>
+    <div class="compra">
+      <p class="precotopo">valor simbólico de <b>R$ 9,99</b> · Pix ou cartão</p>
+      <a class="botao" href="https://pay.kiwify.com.br/LINK-DO-DOCE-SOM" data-goatcounter-click="kiwify-doce-som-topo" data-goatcounter-title="Doce Som: Comprar (topo)">Comprar agora</a>
+      <a class="botao botao-contorno" href="arquivos/doce-som-amostra.pdf" data-goatcounter-click="doce-som-amostra" data-goatcounter-title="Doce Som: abriu a amostra grátis">Ler os primeiros 14 dias grátis</a>
+    </div>
+    <div class="selos"><span>365 dias</span><span>51 canções</span><span>Calendário clicável</span><span>Garantia de 7 dias</span></div>
+    <p class="texto">Um devocional para o ano inteiro, nascido das canções de Josimarth Dias. Em cada dia, um trecho da canção, uma reflexão que leva à Bíblia, uma oração curta e uma leitura para fazer com calma.</p>
+  </header>
+
+  <section class="pilha estreita">
+    <p class="cena">Tem canção que fica com a gente o dia inteiro. E se ela fosse o começo de uma conversa com Deus?</p>
+    <p>Cada página do <i>Doce Som</i> parte de uma das canções do projeto A Mensagem. A letra abre a porta, a reflexão conta a história bíblica por trás dela, com o contexto da passagem, e a oração fecha o encontro do dia.</p>
+    <p>São 365 dias, um para cada data do ano. As canções se alternam ao longo dos meses, e datas como a Páscoa, o Dia das Mães, o Dia dos Pais e o Natal têm uma palavra própria.</p>
+  </section>
+
+  <section class="duas">
+    <div class="cab"><p class="rotulo">O encontro de cada dia</p>
+    <h2>Uma página. <em>Uns poucos minutos.</em></h2></div>
+    <div class="corpo">
+    <p>Cada dia cabe numa página e segue o mesmo caminho, para virar hábito sem pesar:</p>
+    <ol class="passos">
+      <li><b>A canção</b><span>um trecho da letra, para guardar no coração</span></li>
+      <li><b>A reflexão</b><span>da canção à Bíblia, com a história e o contexto da passagem</span></li>
+      <li><b>A oração</b><span>uma ou duas frases para conversar com Deus</span></li>
+      <li><b>Para ler hoje</b><span>um trecho da Bíblia e o versículo principal do dia</span></li>
+    </ol>
+    <p class="suave" style="font-size:.95rem">Em alguns dias, um parágrafo “Por trás da canção” conta, nas palavras do autor, como a música nasceu.</p>
+    </div>
+  </section>
+
+  <section class="duas">
+    <div class="cab"><p class="rotulo">Por dentro</p>
+    <h2>Veja as <em>páginas</em></h2>
+    <p class="suave">Feito para ler no celular, com calendário clicável e marcadores por mês e por dia.</p></div>
+    <div class="corpo">
+      <div class="paginas">
+        <figure><a href="imagens/doce-som-pagina-1.jpg"><img src="imagens/doce-som-pagina-1.jpg" width="600" height="850" loading="lazy" alt="Página do dia 14 de fevereiro, com a canção É Bom Poder Te Amar, a reflexão, a oração e a leitura"></a><figcaption>14 de fevereiro · Tudo em você me atrai</figcaption></figure>
+        <figure><a href="imagens/doce-som-pagina-2.jpg"><img src="imagens/doce-som-pagina-2.jpg" width="600" height="850" loading="lazy" alt="Página do dia 6 de outubro, com a canção Perder e o parágrafo Por trás da canção"></a><figcaption>6 de outubro · com a história da canção</figcaption></figure>
+        <figure><a href="imagens/doce-som-pagina-3.jpg"><img src="imagens/doce-som-pagina-3.jpg" width="600" height="850" loading="lazy" alt="Página do calendário, com os dias de janeiro a junho para tocar e ir direto ao dia"></a><figcaption>Calendário: toque no dia e vá direto a ele</figcaption></figure>
+        <figure><a href="imagens/doce-som-pagina-4.jpg"><img src="imagens/doce-som-pagina-4.jpg" width="600" height="850" loading="lazy" alt="Página com QR codes do Spotify e do site e os links para ouvir as canções"></a><figcaption>Ouça as canções: QR codes e links</figcaption></figure>
+      </div>
+      <a class="gratis" href="arquivos/doce-som-amostra.pdf" data-goatcounter-click="doce-som-amostra" data-goatcounter-title="Doce Som: abriu a amostra grátis">Leia os primeiros 14 dias de janeiro, grátis →</a>
+    </div>
+  </section>
+
+  <section class="duas">
+    <div class="cab"><p class="rotulo">Feito para o dia a dia</p>
+    <h2>Para ler <em>e para ouvir</em></h2></div>
+    <div class="corpo">
+    <div class="recursos">
+      <article><span class="tipo">No celular</span><h3>Calendário clicável</h3><p>Toque na data e vá direto ao dia. Na página do dia, toque na data para voltar ao calendário.</p></article>
+      <article><span class="tipo">Organizado</span><h3>Marcadores por mês</h3><p>Os 365 dias aparecem nos marcadores do leitor de PDF, agrupados por mês, com o título de cada dia.</p></article>
+      <article><span class="tipo">Para ouvir</span><h3>Leitura em voz alta</h3><p>Cada dia começa com a data por extenso, para quem prefere ouvir o devocional num aplicativo de leitura em voz alta.</p></article>
+      <article><span class="tipo">Com as músicas</span><h3>As 51 canções</h3><p>As letras estão no fim do livro, com QR codes e links para ouvir no Spotify e nas outras plataformas.</p></article>
+    </div>
+    </div>
+  </section>
+
+  <section class="duas">
+    <div class="cab"><p class="rotulo">Para quem é</p>
+    <h2>Para quem quer <em>um tempo com Deus</em></h2></div>
+    <div class="corpo">
+    <ul class="lista">
+      <li>Quem quer criar o hábito de ler a Bíblia e orar um pouco todos os dias, sem complicação.</li>
+      <li>Quem gosta das canções de Josimarth Dias e quer ir mais fundo no que elas dizem.</li>
+      <li>Quem quer dar um presente com sentido a um amigo, ao cônjuge ou a alguém da família.</li>
+      <li>Grupos, células e ministérios de louvor que querem uma reflexão curta para começar o encontro.</li>
+    </ul>
+    <p class="suave" style="font-size:.95rem">Você pode começar em qualquer data: abra no dia de hoje e siga em frente.</p>
+    </div>
+  </section>
+
+  <section class="duas">
+    <div class="cab"><p class="rotulo">Quem escreveu</p>
+    <h2>Josimarth <em>Dias</em></h2></div>
+    <div class="corpo">
+    <div class="autor"><img src="imagens/perfil-480.jpg" width="480" height="480" loading="lazy" alt="Josimarth Dias"><p class="suave">Cantor, compositor e violonista de Brasília.</p></div>
+    <p>À frente do projeto A Mensagem, Josimarth escreveu todas as canções deste livro, letra e música. No <i>Doce Som</i>, ele transforma essas canções em um caminho de 365 dias com Deus.</p>
+    <p class="suave"><a href="./">josimarthdias.com.br</a></p>
+    </div>
+  </section>
+
+  <section id="oferta" class="estreita">
+    <div class="oferta">
+      <p class="rotulo">Valor simbólico</p>
+      <p class="preco"><small>R$</small>9<small>,99</small></p>
+      <p class="suave">no Pix ou no cartão · acesso imediato</p>
+      <a class="botao" href="https://pay.kiwify.com.br/LINK-DO-DOCE-SOM" data-goatcounter-click="kiwify-doce-som" data-goatcounter-title="Doce Som: Comprar agora (oferta)">Comprar agora</a>
+      <p style="font-size:.95rem">O valor é simbólico de propósito: o que entra com o livro ajuda a realizar os próximos projetos de música.</p>
+      <p style="font-size:.95rem"><b>Garantia de 7 dias.</b> Se não for para você, peça o reembolso dentro de 7 dias pela própria Kiwify e receba 100% do valor de volta.</p>
+    </div>
+  </section>
+
+  <section class="estreita">
+    <p class="rotulo">Perguntas frequentes</p>
+    <details><summary>Como recebo o livro?</summary><p>Logo após a confirmação do pagamento, a Kiwify envia o acesso para o seu e-mail. Você baixa o livro em PDF na área do aluno.</p></details>
+    <details><summary>Consigo ler no celular?</summary><p>Sim. O PDF foi feito para a tela do celular, com calendário clicável, sumário com links e marcadores por mês e por dia.</p></details>
+    <details><summary>Posso ler um trecho antes de comprar?</summary><p>Pode. Os primeiros 14 dias de janeiro estão liberados de graça: <a href="arquivos/doce-som-amostra.pdf" data-goatcounter-click="doce-som-amostra" data-goatcounter-title="Doce Som: abriu a amostra grátis">baixar a amostra</a>.</p></details>
+    <details><summary>Preciso começar em 1º de janeiro?</summary><p>Não. Cada página tem a sua data, e você pode começar em qualquer dia do ano. Se perder alguns dias, continue de onde está.</p></details>
+    <details><summary>Qual tradução da Bíblia o livro usa?</summary><p>A Bíblia Livre (BLIVRE). As reflexões contam as passagens com palavras simples, e cada dia indica um trecho para você ler na sua própria Bíblia, na tradução que preferir.</p></details>
+    <details><summary>Dá para ouvir as músicas?</summary><p>Sim. No fim do livro, uma página traz QR codes e links para o Spotify e as outras plataformas, e a abertura das letras tem o atalho “Ouça todas no Spotify”.</p></details>
+    <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. Peça o reembolso pela Kiwify e o valor volta integralmente.</p></details>
+  </section>
+
+  <section class="pilha estreita" style="text-align:center;align-items:center">
+    <h2>Uma canção por dia. <em>Um encontro com Deus.</em></h2>
+    <a class="botao" href="https://pay.kiwify.com.br/LINK-DO-DOCE-SOM" data-goatcounter-click="kiwify-doce-som-final" data-goatcounter-title="Doce Som: Comprar (fim da página)">Quero o livro <small>R$ 9,99</small></a>
+  </section>
+
+  <footer>
+    <p>Doce Som © 2026 Josimarth Dias · Pagamento processado pela Kiwify</p>
+    <p>Textos bíblicos: Bíblia Livre (BLIVRE), de Diego Santos, Mario Sérgio e Marco Teles, licença Creative Commons Atribuição 4.0 Brasil.</p>
+    <p>Contato: contato@josimarthdias.com.br · WhatsApp (61) 99918-1424</p>
+  </footer>
+</main>
+
+<div class="barra" id="barra" aria-hidden="true">
+  <p>Devocional de 365 dias<br><b>R$ 9,99</b></p>
+  <a class="botao" href="https://pay.kiwify.com.br/LINK-DO-DOCE-SOM" tabindex="-1" data-goatcounter-click="kiwify-doce-som-barra" data-goatcounter-title="Doce Som: Comprar (barra do celular)">Quero o livro</a>
+</div>
+<script>
+  // Barra de compra no celular: aparece quando o botão do topo sai da tela e some quando a oferta está na tela
+  (function () {
+    var barra = document.getElementById("barra"), topo = document.querySelector(".abre .compra"), oferta = document.getElementById("oferta");
+    if (!barra || !("IntersectionObserver" in window)) return;
+    var noTopo = true, naOferta = false;
+    function atualiza() { var v = !noTopo && !naOferta; barra.classList.toggle("visivel", v); barra.setAttribute("aria-hidden", v ? "false" : "true"); barra.querySelector("a").tabIndex = v ? 0 : -1; }
+    new IntersectionObserver(function (e) { noTopo = e[0].isIntersecting; atualiza(); }).observe(topo);
+    new IntersectionObserver(function (e) { naOferta = e[0].isIntersecting; atualiza(); }).observe(oferta);
+  })();
+</script>
+
+<script data-goatcounter="https://josimarthdias.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
